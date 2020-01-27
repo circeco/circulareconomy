@@ -1,0 +1,392 @@
+/**--------------------general**/
+
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Chathura:100,300,400,700,800|Economica:400,400i,700,700i|Khand:300,400,500,600,700|Londrina+Outline');
+
+*, ::after, ::before {
+    box-sizing: unset !important;
+}
+
+body {
+    margin: 0;
+    font-family: 'Khand', sans-serif; 
+}
+
+h1 {
+
+}
+
+h2 {
+    font-family: 'Bebas Neue', cursive; 
+    font-size: 50px !important;
+    text-align: center;
+    margin-top: 10% !important; 
+    text-decoration: underline #FF5252;
+}
+
+h3 {
+    font-family: 'Bebas Neue', cursive; 
+    font-size: 40px !important;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Bebas Neue', cursive; 
+    font-size: 30px !important;
+}
+
+h5 {
+    font-family: 'Bebas Neue', cursive; 
+    font-size: 20px !important;
+    text-align: center;
+    margin: 3% !important;
+}
+
+p {
+    font-family: 'Chathura', sans-serif;
+    text-align: center;
+    margin: 5% 20%; 
+    font-size: 30px;
+    line-height: 0.8;
+}
+
+#row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+}
+
+
+/**---------------------navbar**/
+
+.topnav {
+    overflow: hidden;
+    background-color: white;
+    color: black;
+}
+
+#logo {
+    background: url("../img/navbar-logo.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 55px;
+    width: 55px;
+    overflow: hidden;
+    margin: 0 8px 0;
+    transition: 0.4s;
+}
+
+#logo:hover {
+    transform: scale(0.9, 0.9);
+}
+
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 0 10px;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 8px;
+    font-family: 'Chathura', sans-serif;
+    font-weight: 700;
+}
+
+.active {
+    background-color: black;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.icon {
+    margin: 0 !important;
+    font-size: 35px !important;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+    position: inherit !important;
+}
+
+.dropbtn {
+    margin: 8px;
+}
+
+.dropdown .dropbtn {  
+    border: none;
+    outline: none;
+    color: black;
+    padding: 0 10px;
+    background-color: inherit;
+    font-weight: 700;
+    font-family: 'Chathura', sans-serif;
+    font-size: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.topnav:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/**----------------big title**/
+
+.title {
+    font-size: 90px;
+    text-align: center;
+    margin: 15% auto 3%;
+    text-decoration: underline #FF5252; 
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.subtitle {
+    font-size: 40px;
+    text-align: center;
+    margin: 0 5% 20%;
+    font-family: 'Chathura', sans-serif;
+    line-height: 0.7;
+}
+
+        #hidden {
+            display:none;
+            transition: 5s;
+        }
+
+        .title :hover + #hidden {
+            display:inline;
+            color: #FF5252;
+
+        }
+
+#red-wood {
+    background: url("../img/red-wood.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+/**------------------circaction**/
+
+.circactions {
+    margin: 1% auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.circactions div {
+    clear:both;
+    height: 300px;
+    width: 220px;
+    max-width: 320px;
+    margin: 2% auto;
+    transition: 0.4s;
+}
+
+.circactions h4 {
+    font-size: 18px;
+    color:white;
+    padding: 5%;
+    text-align: center;
+}
+
+.circactions p {
+    text-align: left;
+    margin: 0 5% 2%;
+    color: white;
+}
+
+.refuse {
+    background-color: #0c343dff;
+}
+
+.reduce {
+    background-color: #134f5cff;
+}
+
+.reuse {
+    background-color: #45818eff;
+}
+
+.repair {
+    background-color: #76a5afff;
+}
+
+.remanu {
+    background-color: #a2c4c9ff;
+}
+
+.recycle {
+    background-color: #d0e0e3ff;
+}
+
+/**--------------------mapbox**/ 
+
+.mapbox {
+    background-color: #d0e0e3ff;
+    min-height: 200px;
+    margin: 0 5% 10%; 
+}
+
+
+/**--------------------circular-strategies page**/ 
+
+#forest_img {
+    background: url("../img/forest.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.protect, .restore {
+    text-align: center;
+    color: white;
+    border: solid #FF5252 8px; 
+    width: 40%;
+    height: max-content; 
+    padding: 1%;
+}
+
+.protect {
+    margin: 10% 2% 10% auto;
+}
+
+.restore {
+    margin: 10% auto 10% 2%;
+}
+
+.protect > h3, .restore > h3 {
+    font-size: 40px;
+}
+
+.protect > p, .protect > p {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Chathura', sans-serif;
+    line-height: 0.8;
+}
+
+@media screen and (max-width: 600px) {
+    .protect {
+    margin: 10% 5%;
+}
+
+.restore {
+    margin: 5%;
+}
+}
+
+/**-------------------------footer**/
+
+footer {
+    background-color: #0c343dff;
+    margin: 0;
+    color: white;
+    padding-top: 5%;
+}
+
+footer div {
+    padding: 0 !important;
+}
+
+.form-control {
+    margin: 1% auto;
+    max-width: 80%;
+    font-size: 24px !important;
+    font-family: 'Chathura', sans-serif;
+    line-height: 0.7;
+}
+
+button[type="submit"] {
+    font-family: 'Chathura', sans-serif;
+    font-size: 24px;
+    margin-top: 1%;
+    margin-bottom: 10%;
+    width: 30%;
+    background-color: #FF5252;
+    border: none;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4s;
+}
+
+button:hover {
+    transform: scale(0.9, 0.9);
+}

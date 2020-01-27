@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Circeco</title>
+</head>
+
+<body>
+    <header>
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" id="logo" class="active"></a>
+            <a href="#home">Circular Action</a>
+            <a href="#news">Circular Pioneer</a>
+            <div class="dropdown">
+                <button class="dropbtn">Circular Strategies  
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                <a href="circular_strategies.html">Circular Theory</a>
+                <a href="circular_strategies.html">Circular Measuring</a>
+                <a href="circular_strategies.html">Planetary Boundaries</a>
+                </div>
+            </div> 
+            <a href="#about">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        <script src="assets/js/navbar.js"></script>
+        <div>
+            <p class="title">CIRC<span id="hidden">ULAR </span>ECO<span id="hidden">SYSTEM</span></p>
+            <p class="subtitle">solutions to inspire local action for building circular ecosystem toward a sustainble future</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="row" id="red-wood">
+        </div>
+        <h2>Circular Action</h2>
+        <p>reusing or recycling are examples of circular actions that help build circular systems of MATERIAL AND PRODUCT by slowing the loop or closing the loop</p>
+
+        <div class="circactions">
+            <div class="refuse">
+                <h4>REFUSE - RETHINK</h4>                
+                <p> Make overconsumption unappealing and unnecessary, reduce redundancy by offering the same function with a radically innovative design</p>
+                <p> Make product use more intensive with multifunctional products, rethinking ownership and long-lasting design </p> 
+            </div>
+            <div class="reduce">
+                <h4>REDUCE</h4>                
+                <p>Phase-out the use of non-renewable resources throughout the supply chain, while increasing efficiency in product manufacturing, distribution and use through reducing the use of new raw material and harmful emissions </p>            
+            </div>
+            <div class="reuse">
+                <h4>REUSE</h4>               
+                <p>Extend usage time by one or several users until the product or material reaches the end of its service life until its condition allow to fulfil the original function </p>
+            </div>
+            <div class="repair">
+                <h4>REPAIR - REFURBISH</h4>                
+                <p>Fornitura e installazione di vetri, cristalli, specchi su misura per interni o esterni, telai per finestre in alluminio, PVC o ferro, tapparelle, persiane, serrande e cancelli  di varie tipologie</p>
+            </div>
+            <div class="remanu">
+                <h4>REMANUFACTURE - REPORPOSE</h4>                
+                <p>Use materials from a discarded product for making new product that have the same function </p>
+                <p>Use a product or its part for a new product with a different function </p>
+            </div>
+            <div class="recycle">
+                <h4>RECYCLE</h4>
+                <p>Process material from a discarded product that in part can be used to create a new product with a function that has a lower or same quality, also downcycling </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h5>Find local circular actions in your area!</h5>
+        <div class="mapbox">
+        </div>
+    </section>
+
+    <section>
+        <h5>Circular Pioneers</h5>
+        <div class="mapbox">
+        </div>
+    </section>
+
+
+    <footer class="row">
+        <div class="col-6">
+            CIRCECO info
+        </div>
+        <div class="col-6">
+            <h5>Have a question?</h5>
+            <form id="center-form" onsubmit="return sendMail(this);">
+                <input type="hidden" name="contact_number">
+                <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
+                <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email Address" required />
+                <textarea rows="5" name="projectsummary" id="projectsummary" class="form-control" placeholder="Question" required></textarea>
+                <div class="form-row text-center">
+                    <div class="col">
+                        <button type="submit" class="btn btn-secondary">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

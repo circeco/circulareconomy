@@ -18,7 +18,7 @@
     <header>
         <div class="topnav" id="myTopnav">
             <a href="index.html" id="logo" class="active"></a>
-            <a href="mapbox.html">Circular Action</a>
+            <a href="mapbox.html">Circular Atlas</a>
             <a href="#news">Circular Pioneer</a>
             <div class="dropdown">
                 <button class="dropbtn">Circular Strategies  
@@ -36,44 +36,18 @@
         <script src="assets/js/navbar.js"></script>
         <div>
             <p class="title">CIRC<span id="hidden">ULAR </span>ECO<span id="hidden">SYSTEM</span></p>
-            <p class="subtitle">solutions to inspire local action for building circular ecosystem toward a sustainble future</p>
         </div>
     </header>
 
 
     <section class="mapbox">
-        <h5>Find local circular actions in your area!</h5>
-        <div class='sidebar pad2'>Listing</div>
-        <div id='map' class='map pad2'>Map</div>
-    </section>
-
-    <section>
-        <h5>Circular Pioneers</h5>
-        <div class="mapbox">
-        </div>
+        <div class='col-2 sidebar pad2'>Listing</div>
+        <div id='map' class='col-8 map pad2'>Map</div>
     </section>
 
 
-    <footer class="row">
-        <div class="col-6">
-            CIRCECO info
-        </div>
-        <div class="col-6">
-            <h5>Have a question?</h5>
-            <form id="center-form" onsubmit="return sendMail(this);">
-                <input type="hidden" name="contact_number">
-                <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
-                <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email Address" required />
-                <textarea rows="5" name="projectsummary" id="projectsummary" class="form-control" placeholder="Question" required></textarea>
-                <div class="form-row text-center">
-                    <div class="col">
-                        <button type="submit" class="btn btn-secondary">Send</button>
-                    </div>
-                </div>
-            </form>
-        </div>
 
-    </footer>
+
 
 
 </body>

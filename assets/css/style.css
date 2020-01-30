@@ -2,13 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Chathura:100,300,400,700,800|Economica:400,400i,700,700i|Khand:300,400,500,600,700|Londrina+Outline');
 
-*, ::after, ::before {
-    box-sizing: unset !important;
-}
-
 body {
     margin: 0;
-    font-family: 'Khand', sans-serif; 
+    font-family: 'Khand', sans-serif !important; 
 }
 
 h2 {
@@ -293,23 +289,20 @@ p {
 /**--------------------mapbox**/ 
 
 .mapbox {
-    display: inline-block;
+    display: inline-flex;
     background: #404040;
     color: #f8f8f8;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .sidebar {
-    width: 33.3333%;
+    
 }
 
 .map {
     border-left: 2px solid #fff;
-    left: 33.3333%;
-    width: 66.6666%;
-    top: 0;
-    bottom: 0;
 }
 
 .pad2 {

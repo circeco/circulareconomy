@@ -288,7 +288,32 @@ p {
 
 /**--------------------mapbox**/ 
 
+.atlas {
+    margin: 1% auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #d0e0e3ff;
+}
 
+.atlas h5 {
+    width: 100%;
+}
+
+.atlas div {
+    clear: both;
+    height: 400px;
+    margin: 2% auto;    
+}
+
+.sidebar {
+    width: 20%;
+    padding: 1%;
+}
+
+.map {
+    width: 80%; 
+    padding: 1%;
+}
 
 
 /**--------------------circular-strategies page**/ 

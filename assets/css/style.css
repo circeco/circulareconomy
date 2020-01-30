@@ -11,10 +11,6 @@ body {
     font-family: 'Khand', sans-serif; 
 }
 
-h1 {
-
-}
-
 h2 {
     font-family: 'Bebas Neue', cursive; 
     font-size: 50px !important;
@@ -297,9 +293,30 @@ p {
 /**--------------------mapbox**/ 
 
 .mapbox {
-    background-color: #d0e0e3ff;
-    min-height: 200px;
-    margin: 0 5% 10%; 
+    display: inline-block;
+    background: #404040;
+    color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 33.3333%;
+}
+
+.map {
+    border-left: 2px solid #fff;
+    left: 33.3333%;
+    width: 66.6666%;
+    top: 0;
+    bottom: 0;
+}
+
+.pad2 {
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
@@ -390,3 +407,5 @@ button[type="submit"] {
 button:hover {
     transform: scale(0.9, 0.9);
 }
+
+

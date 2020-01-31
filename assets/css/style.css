@@ -290,6 +290,7 @@ p {
 
 .atlas {
     margin: 1% auto;
+    padding: 2%;
     display: flex;
     flex-wrap: wrap;
     background-color: #d0e0e3ff;
@@ -312,7 +313,6 @@ p {
 .map {
     width: 80%; 
     padding: 1%;
-    border: #FF5252 solid 1px;
 }
 
 #map {
@@ -363,12 +363,12 @@ p {
 
 @media screen and (max-width: 600px) {
     .protect {
-    margin: 10% 5%;
-}
+        margin: 10% 5%;
+    }
 
-.restore {
-    margin: 5%;
-}
+    .restore {
+        margin: 5%;
+    }
 }
 
 /**-------------------------footer**/

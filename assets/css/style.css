@@ -301,7 +301,6 @@ p {
 
 .atlas div {
     clear: both;
-    height: 400px;
     margin: 2% auto;    
 }
 
@@ -313,6 +312,11 @@ p {
 .map {
     width: 80%; 
     padding: 1%;
+    border: #FF5252 solid 1px;
+}
+
+#map {
+    min-height: 560px;
 }
 
 

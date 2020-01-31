@@ -57,8 +57,8 @@ var initiative = {
             "geometry": {
               "type": "Point",
               "coordinates": [
-                18.068,
-                59.327
+                18.079,
+                59.336
               ]
             },
             "properties": {
@@ -75,6 +75,23 @@ var initiative = {
 
 /*---------------Assign to each initiative an id*/
 
-stores.features.forEach(function(store, i){
-store.properties.id = i;
+initiative.features.forEach(function(initiative, i){
+initiative.properties.id = i;
+});
+
+map.on('load', function (e) {
+    /* Add the data to your map as a layer */
+  map.addLayer({
+    "id": "locations",
+    "type": "symbol",
+    /* Add a GeoJSON source containing place coordinates and information. */
+    "source": {
+      "type": "geojson",
+      "data": initiative
+    },
+    "layout": {
+      "icon-image": "za-national-2",
+      "icon-allow-overlap": true,
+    }
+  });
 });

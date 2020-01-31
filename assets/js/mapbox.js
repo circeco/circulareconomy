@@ -123,7 +123,7 @@ function buildLocationList(data) {
     /* Add the link to the individual listing created above. */
     var link = listing.appendChild(document.createElement('a'));
     link.href = '#';
-    link.className = 'title';
+    link.className = 'stockholmlist';
     link.id = "link-" + prop.id;
     link.innerHTML = prop.address;
 

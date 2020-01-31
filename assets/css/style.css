@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Chathura:100,300,400,700,800|Economica:400,400i,700,700i|Khand:300,400,500,600,700|Londrina+Outline');
 
 body {
-    margin: 0;
+    margin: 0 !important;
     font-family: 'Khand', sans-serif !important; 
 }
 
@@ -301,11 +301,6 @@ p {
     text-align: center;
 }
 
-.atlas div {
-    clear: both;
-    margin: 1% auto;    
-}
-
 .sidebar {
     width: 20%;
     padding: 1%;
@@ -324,12 +319,6 @@ p {
     min-height: 560px;
     font-family: inherit;
     position: relative;
-}
-
-.mapboxgl-canvas {
-    height: 560px !important;
-    font-family: inherit;
-    position: relative; 
 }
 
 .atlas a {
@@ -372,7 +361,7 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00853e;
+  background: #FF5252;
   border-radius: 0;
 }
 
@@ -385,6 +374,10 @@ p {
   clear: both;
   visibility: hidden;
 }
+
+
+
+
 
 
 /**--------------------circular-strategies page**/ 
@@ -452,8 +445,8 @@ footer {
     padding-top: 5%;
 }
 
-footer div {
-    padding: 0 !important;
+.info-footer {
+    
 }
 
 .form-control {

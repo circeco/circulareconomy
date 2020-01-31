@@ -93,5 +93,45 @@ map.on('load', function (e) {
       "icon-image": "za-national-2",
       "icon-allow-overlap": true,
     }
+        });
+
+        /**
+         * Add all the things to the page:
+         * - The location listings on the side of the page
+         * - The markers onto the map
+        */
+        buildLocationList(initiative);
+        addMarkers();
+      });
+
+function buildLocationList(data) {
+  data.features.forEach(function(initiative, i){
+    /**
+     * Create a shortcut for `initiative.properties`,
+     * which will be used several times below.
+    **/
+    var prop = initiative.properties;
+
+    /* Add a new listing section to the sidebar. */
+    var listings = document.getElementById('listings');
+    var listing = listings.appendChild(document.createElement('div'));
+    /* Assign a unique `id` to the listing. */
+    listing.id = "listing-" + prop.id;
+    /* Assign the `item` class to each listing for styling. */
+    listing.className = 'item';
+
+    /* Add the link to the individual listing created above. */
+    var link = listing.appendChild(document.createElement('a'));
+    link.href = '#';
+    link.className = 'title';
+    link.id = "link-" + prop.id;
+    link.innerHTML = prop.address;
+
+    /* Add details to the individual listing. */
+    var details = listing.appendChild(document.createElement('div'));
+    details.innerHTML = prop.city;
+    if (prop.phone) {
+      details.innerHTML += ' · ' + prop.phoneFormatted;
+    }
   });
-});
+}

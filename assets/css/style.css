@@ -301,7 +301,7 @@ p {
 
 .atlas div {
     clear: both;
-    margin: 2% auto;    
+    margin: 1% auto;    
 }
 
 .sidebar {
@@ -372,6 +372,11 @@ p {
 }
 
 /**-------------------------footer**/
+
+footer.row {
+    display: flex;
+    margin: 0;
+}
 
 footer {
     background-color: #0c343dff;

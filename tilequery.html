@@ -1,16 +1,41 @@
+<!DOCTYPE html>
+<html>
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazRmZnBqbDAwbHpmM3RvMjhvOTdlbGJlIn0.fb-zFM7RFrt7rCUzE-TsyA';
+<head>
+  <meta charset='utf-8' />
+  <title>Healthy food finder</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
 
-/*------------Add the map to the page*/
+<body>
 
-var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
-  center: [18.072, 59.325],
-  zoom: 11
-});
-
+  <div id='map'></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazRmZnBqbDAwbHpmM3RvMjhvOTdlbGJlIn0.fb-zFM7RFrt7rCUzE-TsyA';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
+      center: [-105.0178157, 39.737925],
+      zoom: 12
+    });
 
     map.on('load', function() {
       var geocoder = new MapboxGeocoder({
@@ -19,9 +44,9 @@ var map = new mapboxgl.Map({
         zoom: 13,
         placeholder: "Enter an address or place name",
         bbox: [-105.116, 39.679, -104.898, 39.837]
-    });
+      });
 
-    map.addControl(geocoder, 'top-left');
+      map.addControl(geocoder, 'top-left');
 
       var marker = new mapboxgl.Marker({'color': '#008000'})
 
@@ -41,7 +66,7 @@ var map = new mapboxgl.Map({
         }).done(function(data) {
           map.getSource('tilequery').setData(data);
         })
-    });
+      });
 
       map.addSource('tilequery', {
         type: "geojson",
@@ -115,3 +140,8 @@ var map = new mapboxgl.Map({
       });
 
     })
+  </script>
+
+</body>
+
+</html>

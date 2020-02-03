@@ -1,6 +1,11 @@
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazRmZnBqbDAwbHpmM3RvMjhvOTdlbGJlIn0.fb-zFM7RFrt7rCUzE-TsyA';
 
+/*-------------Add Constant*/
+
+const stockholm = [18.072, 59.325];
+const denver = [-105.0178157, 39.737925];
+const home = denver;
 
 /*------------Add the map to the page*/
 

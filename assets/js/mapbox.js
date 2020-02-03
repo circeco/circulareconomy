@@ -16,3 +16,15 @@ var map = new mapboxgl.Map({
   zoom: 11
 });
 
+/*------------Load the map*/
+
+map.on('load', function () {
+    console.log("Map loading...");
+
+    map.addSource('tilequery', {
+        type: "geojson",
+        data: {
+            "type": "FeatureCollection",
+            "features": []
+        }
+    });

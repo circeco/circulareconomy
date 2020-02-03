@@ -12,7 +12,7 @@ const home = denver;
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
-  center: [18.072, 59.325],
+  center: [-105.0178157, 39.737925],
   zoom: 11
 });
 

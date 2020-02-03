@@ -28,3 +28,62 @@ map.on('load', function () {
             "features": []
         }
     });
+
+/*------------Add map layer*/
+
+//*------------define the style for display the data*//
+
+    map.addLayer({
+        id: "tilequery-points",
+        type: "circle",
+        source: "tilequery",
+        paint: {
+            "circle-stroke-color": "white",
+            "circle-stroke-width": {
+                stops: [
+                    [0, 0.1],
+                    [18, 3]
+                ],
+                base: 5
+            },
+            "circle-radius": {
+                stops: [
+                    [12, 5],
+                    [22, 180]
+                ],
+                base: 5
+            },
+            "circle-color": [
+                'match',
+                ['get', 'STORE_TYPE'],
+                'Convenience Store', '#FF8C00',
+                'Convenience Store With Gas', '#FF8C00',
+                'Pharmacy', '#FF8C00',
+                'Specialty Food Store', '#9ACD32',
+                'Small Grocery Store', '#008000',
+                'Supercenter', '#008000',
+                'Superette', '#008000',
+                'Supermarket', '#008000',
+                'Warehouse Club Store', '#008000',
+                '#FF0000' // any other store type
+            ]
+        }
+    });
+
+    //*--------------parameters to define for displaying the data*//
+
+    const radius = 100000;
+    var point = home;
+    var tileset = 'examples.dl46ljcs';
+    var query = 'https://api.mapbox.com/v4/' + tileset + '/tilequery/' + point[0] + ',' + point[1] +
+        '.json?radius=' + radius + '&limit=50&access_token=' + mapboxgl.accessToken;
+
+    //*------------fetching the data using ajax method*//
+
+    $.ajax({       
+        method: 'GET',
+        url: query,
+    }).done(function (data0) {
+        map.getSource('tilequery').setData(data0);
+    })
+});

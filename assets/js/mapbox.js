@@ -1,13 +1,13 @@
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazRmZnBqbDAwbHpmM3RvMjhvOTdlbGJlIn0.fb-zFM7RFrt7rCUzE-TsyA';
 
-/*-------------Add Constant*/
+// Add Constant 
 
 const stockholm = [18.072, 59.325];
 const denver = [-105.0178157, 39.737925];
 const home = denver;
 
-/*------------Add the map to the page*/
+// Add the map to the page 
 
 var map = new mapboxgl.Map({
   container: 'map',
@@ -16,7 +16,7 @@ var map = new mapboxgl.Map({
   zoom: 11
 });
 
-/*------------Load the map*/
+// Load the tilequery 
 
 map.on('load', function () {
     console.log("Map loading...");
@@ -29,9 +29,9 @@ map.on('load', function () {
         }
     });
 
-/*------------Add map layer*/
+// Add map layer 
 
-//*------------define the style for display the data*//
+// define the style for display the data 
 
     map.addLayer({
         id: "tilequery-points",
@@ -48,7 +48,7 @@ map.on('load', function () {
             },
             "circle-radius": {
                 stops: [
-                    [12, 5],
+                    [12, 7],
                     [22, 180]
                 ],
                 base: 5
@@ -70,7 +70,7 @@ map.on('load', function () {
         }
     });
 
-    //*--------------parameters to define for displaying the data*//
+    // parameters to define for displaying the data
 
     const radius = 100000;
     var point = home;
@@ -78,7 +78,7 @@ map.on('load', function () {
     var query = 'https://api.mapbox.com/v4/' + tileset + '/tilequery/' + point[0] + ',' + point[1] +
         '.json?radius=' + radius + '&limit=50&access_token=' + mapboxgl.accessToken;
 
-    //*------------fetching the data using ajax method*//
+    // fetching the data using ajax method 
 
     $.ajax({       
         method: 'GET',
@@ -87,3 +87,18 @@ map.on('load', function () {
         map.getSource('tilequery').setData(data0);
     })
 });
+
+// Geocoder 
+
+map.on('load', function() {
+  var geocoder = new MapboxGeocoder({ // Initialize the geocoder
+    accessToken: mapboxgl.accessToken, // Set the access token
+    mapboxgl: mapboxgl, // Set the mapbox-gl instance
+    zoom: 13, // Set the zoom level for geocoding results
+    placeholder: "Enter an address or place name", // This placeholder text will display in the search bar
+    bbox: [-105.116, 39.679, -104.898, 39.837] // Set a bounding box
+  });
+  // Add the geocoder to the map
+  map.addControl(geocoder, 'top-left'); // Add the search box to the top left
+});  
+

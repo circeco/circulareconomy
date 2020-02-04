@@ -13,7 +13,7 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
   center: [-105.0178157, 39.737925],
-  zoom: 11
+  zoom: 13
 });
 
 // Load the tilequery 
@@ -101,4 +101,11 @@ map.on('load', function() {
   // Add the geocoder to the map
   map.addControl(geocoder, 'top-left'); // Add the search box to the top left
 });  
+
+map.addControl(
+new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+mapboxgl: mapboxgl
+})
+);
 

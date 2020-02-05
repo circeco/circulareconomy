@@ -10,10 +10,10 @@ const home = denver;
 // Add the map to the page 
 
 var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
-  center: [-105.0178157, 39.737925],
-  zoom: 13
+    container: 'map',
+    style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
+    center: [-105.0178157, 39.737925],
+    zoom: 13
 });
 
 // Load the tilequery 
@@ -26,12 +26,16 @@ map.on('load', function () {
         data: {
             "type": "FeatureCollection",
             "features": []
-        }
+        },
+        cluster: true,
+        clusterMaxZoom: 14, // Max zoom to cluster points on
+        clusterRadius: 50   // Radius of each cluster when clustering points (defaults to 50)
+
     });
 
-// Add map layer 
+    // Add map layer 
 
-// define the style for display the data 
+    // define the style for display the data 
 
     map.addLayer({
         id: "tilequery-points",
@@ -80,7 +84,7 @@ map.on('load', function () {
 
     // fetching the data using ajax method 
 
-    $.ajax({       
+    $.ajax({
         method: 'GET',
         url: query,
     }).done(function (data0) {
@@ -92,22 +96,22 @@ map.on('load', function () {
 
 // Geocoder 
 
-map.on('load', function() {
-  var geocoder = new MapboxGeocoder({ // Initialize the geocoder
-    accessToken: mapboxgl.accessToken, // Set the access token
-    mapboxgl: mapboxgl, // Set the mapbox-gl instance
-    zoom: 13, // Set the zoom level for geocoding results
-    placeholder: "Enter an address or place name", // This placeholder text will display in the search bar
-    bbox: [-105.116, 39.679, -104.898, 39.837] // Set a bounding box
-  });
-  // Add the geocoder to the map
-  map.addControl(geocoder, 'top-left'); // Add the search box to the top left
-});  
+map.on('load', function () {
+    var geocoder = new MapboxGeocoder({ // Initialize the geocoder
+        accessToken: mapboxgl.accessToken, // Set the access token
+        mapboxgl: mapboxgl, // Set the mapbox-gl instance
+        zoom: 13, // Set the zoom level for geocoding results
+        placeholder: "Enter an address or place name", // This placeholder text will display in the search bar
+        bbox: [-105.116, 39.679, -104.898, 39.837] // Set a bounding box
+    });
+    // Add the geocoder to the map
+    map.addControl(geocoder, 'top-left'); // Add the search box to the top left
+});
 
 map.addControl(
-new MapboxGeocoder({
-accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-})
+    new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+    })
 );
 

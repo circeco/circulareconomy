@@ -74,7 +74,7 @@ map.on('load', function () {
 
     const radius = 100000;
     var point = home;
-    var tileset = 'circeco.ck69exzb31wx12nun3edb6998-1bdar';
+    var tileset = 'circeco.ck69ksutg08g02imwptgjxa6d-19vzm';
     var query = 'https://api.mapbox.com/v4/' + tileset + '/tilequery/' + point[0] + ',' + point[1] +
         '.json?radius=' + radius + '&limit=50&access_token=' + mapboxgl.accessToken;
 

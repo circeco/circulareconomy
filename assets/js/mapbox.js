@@ -74,7 +74,7 @@ map.on('load', function () {
 
     const radius = 100000;
     var point = home;
-    var tileset = 'examples.dl46ljcs';
+    var tileset = 'circeco.ck69exzb31wx12nun3edb6998-1bdar';
     var query = 'https://api.mapbox.com/v4/' + tileset + '/tilequery/' + point[0] + ',' + point[1] +
         '.json?radius=' + radius + '&limit=50&access_token=' + mapboxgl.accessToken;
 
@@ -87,6 +87,8 @@ map.on('load', function () {
         map.getSource('tilequery').setData(data0);
     })
 });
+
+
 
 // Geocoder 
 

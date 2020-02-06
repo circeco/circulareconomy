@@ -2,149 +2,154 @@
 <html>
 
 <head>
-  <meta charset='utf-8' />
-  <title>Healthy food finder</title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
-  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
-  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
+	<meta charset="utf-8" />
+	<title>Show and hide layers</title>
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
 
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+		#map {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+		}
+	</style>
 </head>
 
 <body>
+	<style>
+		#menu {
+			background: #fff;
+			position: absolute;
+			z-index: 1;
+			top: 10px;
+			right: 10px;
+			border-radius: 3px;
+			width: 120px;
+			border: 1px solid rgba(0, 0, 0, 0.4);
+			font-family: 'Open Sans', sans-serif;
+		}
 
-  <div id='map'></div>
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazRmZnBqbDAwbHpmM3RvMjhvOTdlbGJlIn0.fb-zFM7RFrt7rCUzE-TsyA';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
-      center: [-105.0178157, 39.737925],
-      zoom: 12
-    });
+		#menu a {
+			font-size: 13px;
+			color: #404040;
+			display: block;
+			margin: 0;
+			padding: 0;
+			padding: 10px;
+			text-decoration: none;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+			text-align: center;
+		}
 
+		#menu a:last-child {
+			border: none;
+		}
 
+		#menu a:hover {
+			background-color: #f8f8f8;
+			color: #404040;
+		}
 
-    map.on('load', function() {
-      var geocoder = new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl,
-        zoom: 13,
-        placeholder: "Enter an address or place name",
-        bbox: [-105.116, 39.679, -104.898, 39.837]
-    });
+		#menu a.active {
+			background-color: #3887be;
+			color: #ffffff;
+		}
 
-    map.addControl(geocoder, 'top-right');
+		#menu a.active:hover {
+			background: #3074a4;
+		}
+	</style>
 
-    var marker = new mapboxgl.Marker({'color': '#008000'})
+	<nav id="menu"></nav>
+	<div id="map"></div>
 
-    geocoder.on('result', function(data) {
-
-    var point = data.result.center;
-    var tileset = 'examples.dl46ljcs';
-    var radius = 1609;
-    var limit = 50;
-    var query = 'https://api.mapbox.com/v4/' + tileset + '/tilequery/' + point[0] + ',' + point[1] + '.json?radius=' + radius + '&limit= ' + limit + ' &access_token=' + mapboxgl.accessToken;
-
-    marker.setLngLat(point).addTo(map);
-
-    $.ajax({
-        method: 'GET',
-        url: query,
-    }).done(function(data) {
-        map.getSource('tilequery').setData(data);
-    })
-    });
-
-      map.addSource('tilequery', {
-        type: "geojson",
-        data: {
-          "type": "FeatureCollection",
-          "features": []
-        }
-      });
-
-      map.addLayer({
-        id: "tilequery-points",
-        type: "circle",
-        source: "tilequery",
-        paint: {
-          "circle-stroke-color": "white",
-          "circle-stroke-width": {
-            stops: [
-              [0, 0.1],
-              [18, 3]
-            ],
-            base: 5
-          },
-          "circle-radius": {
-            stops: [
-              [12, 5],
-              [22, 180]
-            ],
-            base: 5
-          },
-          "circle-color": [
-            'match',
-            ['get', 'STORE_TYPE'],
-            'Convenience Store', '#FF8C00',
-            'Convenience Store With Gas', '#FF8C00',
-            'Pharmacy', '#FF8C00',
-            'Specialty Food Store', '#9ACD32',
-            'Small Grocery Store', '#008000',
-            'Supercenter', '#008000',
-            'Superette', '#008000',
-            'Supermarket', '#008000',
-            'Warehouse Club Store', '#008000',
-            '#FF0000' // any other store type
-          ]
-        }
-      });
-
-
-      var popup = new mapboxgl.Popup;
-
-      map.on('mouseenter', 'tilequery-points', function(e) {
-        map.getCanvas().style.cursor = 'pointer';
-
-        var title = '<h3>' + e.features[0].properties.STORE_NAME + '</h3>';
-        var storeType = '<h4>' + e.features[0].properties.STORE_TYPE + '</h4>';
-        var storeAddress = '<p>' + e.features[0].properties.ADDRESS_LINE1 + '</p>';
-        var obj = JSON.parse(e.features[0].properties.tilequery);
-        var distance = '<p>' + (obj.distance / 1609.344).toFixed(2) + ' mi. from location' + '</p>';
-
-        var lon = e.features[0].properties.longitude;
-        var lat = e.features[0].properties.latitude;
-        var coordinates = new mapboxgl.LngLat(lon, lat);
-        var content = title + storeType + storeAddress + distance;
-
-        popup.setLngLat(coordinates)
-          .setHTML(content)
-          .addTo(map);
-      })
-
-      map.on('mouseleave', 'tilequery-points', function() {
-        map.getCanvas().style.cursor = '';
-        popup.remove();
-      });
-
-    })
-  </script>
-
-</body>
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazY5a2lrM2owZTkzM25uOXJmaGhoajZnIn0.PxqJvdUMv5taYZoChW8jeg';
+			var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v11',
+			zoom: 15,
+			center: [-71.97722138410576, -13.517379300798098]
+			});
+			 
+			map.on('load', function() {
+			map.addSource('museums', {
+			type: 'vector',
+			url: 'mapbox://mapbox.2opop9hr'
+			});
+			map.addLayer({
+			'id': 'museums',
+			'type': 'circle',
+			'source': 'museums',
+			'layout': {
+			'visibility': 'visible'
+			},
+			'paint': {
+			'circle-radius': 8,
+			'circle-color': 'rgba(55,148,179,1)'
+			},
+			'source-layer': 'museum-cusco'
+			});
+			 
+			map.addSource('contours', {
+			type: 'vector',
+			url: 'mapbox://mapbox.mapbox-terrain-v2'
+			});
+			map.addLayer({
+			'id': 'contours',
+			'type': 'line',
+			'source': 'contours',
+			'source-layer': 'contour',
+			'layout': {
+			'visibility': 'visible',
+			'line-join': 'round',
+			'line-cap': 'round'
+			},
+			'paint': {
+			'line-color': '#877b59',
+			'line-width': 1
+			}
+			});
+			});
+			 
+			var toggleableLayerIds = ['contours', 'museums'];
+			 
+			for (var i = 0; i < toggleableLayerIds.length; i++) {
+			var id = toggleableLayerIds[i];
+			 
+			var link = document.createElement('a');
+			link.href = '#';
+			link.className = 'active';
+			link.textContent = id;
+			 
+			link.onclick = function(e) {
+			var clickedLayer = this.textContent;
+			e.preventDefault();
+			e.stopPropagation();
+			 
+			var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+			 
+			if (visibility === 'visible') {
+			map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+			this.className = '';
+			} else {
+			this.className = 'active';
+			map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+			}
+			};
+			 
+			var layers = document.getElementById('menu');
+			layers.appendChild(link);
+			}
+	</script>
+	
+	</body>
 
 </html>

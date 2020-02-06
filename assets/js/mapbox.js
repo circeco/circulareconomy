@@ -1,5 +1,5 @@
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazY5a2lrM2owZTkzM25uOXJmaGhoajZnIn0.PxqJvdUMv5taYZoChW8jeg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazZhcW9mdm0wN3ZsM29wOXF6bXRwaDhxIn0.iz4i_eSrghnGX02vj7ATDg';
 
 // Add Constant 
 
@@ -35,6 +35,26 @@ map.on('load', function () {
 
     // Add map layer 
 
+		map.addSource('museums', {
+			type: 'vector',
+			url: 'mapbox://circeco.ck69km0681xb02to3wcdvvbss-0mo1s'
+			});
+
+        console.log("Map sourching...");
+		map.addLayer({
+			'id': 'museums',
+			'type': 'circle',
+			'source': 'museums',
+			'layout': {
+			'visibility': 'visible'
+			},
+			'paint': {
+			'circle-radius': 8,
+			'circle-color': 'rgba(55,148,179,1)'
+			},
+			'source-layer': 'airports'
+			});
+        console.log("Map layering ...");
     // define the style for display the data 
 
     map.addLayer({

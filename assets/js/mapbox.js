@@ -103,23 +103,6 @@ map.on('load', function () {
         }
     });
 
-
-    // parameters to define for displaying the data
-
-    const radius = 100000;
-    var point = home;
-    var tileset = 'circeco.ck69ksutg08g02imwptgjxa6d-19vzm';
-    var query = 'https://api.mapbox.com/v4/' + tileset + '/tilequery/' + point[0] + ',' + point[1] +
-        '.json?radius=' + radius + '&limit=50&access_token=' + mapboxgl.accessToken;
-
-    // fetching the data using ajax method 
-
-    $.ajax({
-        method: 'GET',
-        url: query,
-    }).done(function (data0) {
-        map.getSource('tilequery').setData(data0);
-    })
 });
 
 

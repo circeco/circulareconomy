@@ -33,34 +33,43 @@ map.on('load', function () {
 
     });
 
-    // Add map layer 
+    // Add map airport layer 
 
-		map.addSource('museums', {
-			type: 'vector',
-			url: 'mapbox://circeco.ck69km0681xb02to3wcdvvbss-0mo1s'
-			});
+    map.addSource('museums', {
+        type: 'vector',
+        url: 'mapbox://circeco.ck69km0681xb02to3wcdvvbss-0mo1s'
+    });
 
-        console.log("Map sourching...");
-		map.addLayer({
-			'id': 'museums',
-			'type': 'circle',
-			'source': 'museums',
-			'layout': {
-			'visibility': 'visible'
-			},
-			'paint': {
-			'circle-radius': 8,
-			'circle-color': 'rgba(55,148,179,1)'
-			},
-			'source-layer': 'airports'
-			});
-        console.log("Map layering ...");
+    console.log("Map sourching...");
+    map.addLayer({
+        'id': 'museums',
+        'type': 'circle',
+        'source': 'museums',
+        'layout': {
+            'visibility': 'visible'
+        },
+        'paint': {
+            'circle-radius': 8,
+            'circle-color': 'rgba(55,148,179,1)'
+        },
+        'source-layer': 'airports'
+    });
+
+    // Add map airport layer 
+
+    map.addSource('shops', {
+        type: 'vector',
+        url: 'mapbox://circeco.ck69ksutg08g02imwptgjxa6d-19vzm'
+    });
+
+    console.log("Map layering ...");
     // define the style for display the data 
 
     map.addLayer({
-        id: "tilequery-points",
-        type: "circle",
-        source: "tilequery",
+        id: 'shops',
+        type: 'circle',
+        source: 'shops',
+        'source-layer': 'food_stores',
         paint: {
             "circle-stroke-color": "white",
             "circle-stroke-width": {
@@ -93,6 +102,7 @@ map.on('load', function () {
             ]
         }
     });
+
 
     // parameters to define for displaying the data
 

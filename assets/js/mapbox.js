@@ -59,7 +59,7 @@ map.on('load', function () {
 
     map.addSource('shops', {
         type: 'vector',
-        url: 'mapbox://circeco.ck69ksutg08g02imwptgjxa6d-19vzm'
+        url: 'mapbox://circeco.ck69ksutg08g02imwptgjxa6d-19vzm',
     });
 
     console.log("Map layering ...");
@@ -102,6 +102,59 @@ map.on('load', function () {
             ]
         }
     });
+
+    var shops = {
+        type: "geojson",
+        url: 'mapbox://circeco.ck69ksutg08g02imwptgjxa6d-19vzm',
+        data: {
+            "type": "FeatureCollection",
+            "features": []
+        },
+    }
+
+    /**
+       * Assign a unique id to each store. You'll use this `id`
+       * later to associate each point on the map with a listing
+       * in the sidebar.
+      */
+      shops.features.forEach(function(shops, i){
+        shops.properties.id = i;
+      });
+
+
+buildLocationList(shops);
+
+function buildLocationList(data) {
+  data.features.forEach(function(shops, i){
+    /**
+     * Create a shortcut for `store.properties`,
+     * which will be used several times below.
+    **/
+    var prop = shops.properties;
+
+    /* Add a new listing section to the sidebar. */
+    var listings = document.getElementById('listings');
+    var listing = listings.appendChild(document.createElement('div'));
+    /* Assign a unique `id` to the listing. */
+    listing.id = "listing-" + prop.id;
+    /* Assign the `item` class to each listing for styling. */
+    listing.className = 'item';
+
+    /* Add the link to the individual listing created above. */
+    var link = listing.appendChild(document.createElement('a'));
+    link.href = '#';
+    link.className = 'title';
+    link.id = "link-" + prop.id;
+    link.innerHTML = prop.address;
+
+    /* Add details to the individual listing. */
+    var details = listing.appendChild(document.createElement('div'));
+    details.innerHTML = prop.city;
+    if (prop.phone) {
+      details.innerHTML += ' · ' + prop.phoneFormatted;
+    }
+  });
+}
 
 });
 

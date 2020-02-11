@@ -108,7 +108,8 @@ map.on('load', function () {
 /* Add list of shops next to the map */
 
 
-// using the idle event when the map is loading to set up features for the listing  
+// using the idle event when the map is loading to set up features for the listing 
+// queryRenderedFeatures return features in one source layer in the vector source 
 map.on('idle', function () {
     const features = map.queryRenderedFeatures({layers: ['shops']});
     console.log("idle features: ", features);

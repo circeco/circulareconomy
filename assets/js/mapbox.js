@@ -156,6 +156,8 @@ function buildLocationList(features) {
 }
 
 
+
+
 // Hide and show layers 
 
 var toggleableLayerIds = ['shops', 'museums'];
@@ -184,7 +186,7 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
         }
     };
 
-    var layers = document.getElementById('menu');
+    var layers = document.getElementById('selectlayers');
     layers.appendChild(link);
 }
 

@@ -351,30 +351,46 @@ p {
 }
 
 .listings {
-  height: 100%;
-  overflow: auto;
-  background-color: #f9f9f9;
+    height: 100%;
+    overflow: auto;
+    background-color: #f9f9f9;
 }
 
 .listings .item {
-  display: block;
-  border-bottom: 1px solid #eee;
-  padding: 10px;
+    display: block;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
 }
 
-.clearfix { display: block; }
+fieldset {
+    background: #ddd;
+    border: none;
+    padding: 5px !important;
+}
+
+input {
+    display: block;
+    border: none;
+    width: 100%;
+    border-radius: 0;
+    padding: 8px;
+}
+
+.clearfix { 
+    display: block; 
+}
 
 .clearfix::after {
-  content: '.';
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 
 /* Marker tweaks */
 .mapboxgl-popup-close-button {
-  display: none;
+    display: none;
 }
 
 .mapboxgl-popup-content {

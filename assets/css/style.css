@@ -3,19 +3,19 @@
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Chathura:100,300,400,700,800|Economica:400,400i,700,700i|Khand:300,400,500,600,700|Londrina+Outline');
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 3px;
-  border-left: 0;
-  background: rgba(0, 0, 0, 0.1);
+    width: 5px;
+    height: 3px;
+    border-left: 0;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-track {
-  background: none;
+    background: none;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FF5252;
-  border-radius: 0px;
+    background: #FF5252;
+    border-radius: 0px;
 }
 
 body {
@@ -323,6 +323,10 @@ p {
     top: 0;
     left: 0;
     overflow: hidden;
+}
+
+.sidebar:hover ::-webkit-scrollbar {
+    width: 10px !important;
 }
 
 .map {

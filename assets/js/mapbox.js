@@ -157,6 +157,9 @@ function buildLocationList(features) {
 
 
 
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
 // Geocoder 
 
 map.on('load', function () {

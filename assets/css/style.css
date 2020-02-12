@@ -445,12 +445,8 @@ input {
 
 #selectlayers {
     background: #fff;
-    position: absolute;
     z-index: 1;
-    top: 10%;
-    right: 10px;
-    border-radius: 3px;
-    width: 120px;
+    font-family: 'Bebas Neue', cursive;
 }
  
 #selectlayers a {

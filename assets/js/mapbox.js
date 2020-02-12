@@ -105,8 +105,8 @@ map.on('load', function () {
 
 });
 
-/* Add list of shops next to the map */
 
+/* Add list of shops next to the map */
 
 // using the idle event when the map is loading to set up features for the listing 
 // queryRenderedFeatures return features in one source layer in the vector source 
@@ -116,12 +116,16 @@ map.on('idle', function () {
     buildLocationList(features)
 });
 
+
+
 // Build listing 
 function buildLocationList(features) {
 
     console.log("buildLocationList ", features);
 
-    const listings = document.getElementById('listings');
+    const listings = document.getElementById('listings'); 
+
+    listings.innerHTML = ''; /* listing only what can be seen in the map */
 
     features.forEach(function (feature, i) {
 
@@ -154,6 +158,16 @@ function buildLocationList(features) {
         }
     });
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -142,13 +142,13 @@ function buildLocationList(features) {
         /* Add the link to the individual listing created above. */
         var link = listing.appendChild(document.createElement('a'));
         link.href = '#';
-        link.className = 'title';
+        link.className = 'stockholmlist';
         link.id = "link-" + i;
-        link.innerHTML = prop['ADDRESS_LINE1'];
+        link.innerHTML = prop['STORE_NAME'];
 
         /* Add details to the individual listing. */
         var details = listing.appendChild(document.createElement('div'));
-        details.innerHTML = prop['STORE_NAME'];
+        details.innerHTML = prop['ADDRESS_LINE1'];
         if (prop.phone) {
             details.innerHTML += ' · ' + prop.phoneFormatted;
         }

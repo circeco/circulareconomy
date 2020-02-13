@@ -59,7 +59,7 @@ map.on('load', function () {
 
     map.addSource('shops', {
         type: 'vector',
-        url: 'mapbox://circeco.ck69ksutg08g02imwptgjxa6d-19vzm'
+        url: 'mapbox://circeco.ck69ksutg08g02imwptgjxa6d-19vzm',
     });
 
     console.log("Map layering ...");
@@ -106,6 +106,108 @@ map.on('load', function () {
 });
 
 
+/* Add list of shops next to the map */
+
+// using the idle event when the map is loading to set up features for the listing 
+// queryRenderedFeatures return features in one source layer in the vector source 
+map.on('idle', function () {
+    const features = map.queryRenderedFeatures({layers: ['shops']});
+    console.log("idle features: ", features);
+    buildLocationList(features)
+});
+
+
+
+// Build listing 
+function buildLocationList(features) {
+
+    console.log("buildLocationList ", features);
+
+    const listings = document.getElementById('listings'); 
+
+    listings.innerHTML = ''; /* listing only what can be seen in the map */
+
+    features.forEach(function (feature, i) {
+
+        /**
+         * Create a shortcut for `store.properties`,
+         * which will be used several times below.
+         **/
+        var prop = feature.properties;
+
+        /* Add a new listing section to the sidebar. */
+
+        var listing = listings.appendChild(document.createElement('div'));
+        /* Assign a unique `id` to the listing. */
+        listing.id = "listing-" + i;
+        /* Assign the `item` class to each listing for styling. */
+        listing.className = 'item';
+
+        /* Add the link to the individual listing created above. */
+        var link = listing.appendChild(document.createElement('a'));
+        link.href = '#';
+        link.className = 'stockholmlist';
+        link.id = "link-" + i;
+        link.innerHTML = prop['STORE_NAME'];
+
+        /* Add details to the individual listing. */
+        var details = listing.appendChild(document.createElement('div'));
+        details.innerHTML = prop['ADDRESS_LINE1'];
+        if (prop.phone) {
+            details.innerHTML += ' · ' + prop.phoneFormatted;
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Hide and show layers 
+
+var toggleableLayerIds = ['shops', 'museums'];
+
+for (var i = 0; i < toggleableLayerIds.length; i++) {
+    var id = toggleableLayerIds[i];
+
+    var link = document.createElement('a');
+    link.href = '#';
+    link.className = 'active';
+    link.textContent = id;
+
+    link.onclick = function (e) {
+        var clickedLayer = this.textContent;
+        e.preventDefault();
+        e.stopPropagation();
+
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+    };
+
+    var layers = document.getElementById('selectlayers');
+    layers.appendChild(link);
+}
+
+
+
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
 // Geocoder 
 

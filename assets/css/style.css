@@ -2,6 +2,22 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Chathura:100,300,400,700,800|Economica:400,400i,700,700i|Khand:300,400,500,600,700|Londrina+Outline');
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    border-left: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF5252;
+    border-radius: 0px;
+}
+
 body {
     margin: 0 !important;
     font-family: 'Khand', sans-serif !important; 
@@ -303,16 +319,18 @@ p {
 
 .sidebar {
     width: 20%;
-    padding: 1%;
-    height: 100%;
+    height: 560px;
     top: 0;
     left: 0;
     overflow: hidden;
 }
 
+.sidebar:hover ::-webkit-scrollbar {
+    width: 10px !important;
+}
+
 .map {
     width: 80%; 
-    padding: 1%;
 }
 
 #map {
@@ -337,47 +355,46 @@ p {
 }
 
 .listings {
-  height: 100%;
-  overflow: auto;
-  background-color: #f9f9f9;
+    height: 100%;
+    overflow: auto;
+    background-color: #f9f9f9;
 }
 
 .listings .item {
-  display: block;
-  border-bottom: 1px solid #eee;
-  padding: 10px;
+    display: block;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
 }
 
-
-::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-  border-left: 0;
-  background: rgba(0, 0, 0, 0.1);
+fieldset {
+    background: #ddd;
+    border: none;
+    padding: 5px !important;
 }
 
-::-webkit-scrollbar-track {
-  background: none;
+input {
+    display: block;
+    border: none;
+    width: 100%;
+    border-radius: 0;
+    padding: 8px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #FF5252;
-  border-radius: 0;
+.clearfix { 
+    display: block; 
 }
-
-.clearfix { display: block; }
 
 .clearfix::after {
-  content: '.';
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 
 /* Marker tweaks */
 .mapboxgl-popup-close-button {
-  display: none;
+    display: none;
 }
 
 .mapboxgl-popup-content {
@@ -424,7 +441,42 @@ p {
   border-bottom-color: #91c949;
 }
 
+/* Hide and show map layers */
 
+#selectlayers {
+    background: #fff;
+    z-index: 1;
+    font-family: 'Bebas Neue', cursive;
+}
+ 
+#selectlayers a {
+    font-size: 13px;
+    color: #0c343dff;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+ 
+#selectlayers a:last-child {
+    border: none;
+}
+ 
+#selectlayers a:hover {
+    background-color: #f8f8f8;
+    color: #404040;
+}
+ 
+#selectlayers a.active {
+    background-color: #0c343dff;
+    color: #ffffff;
+}
+ 
+#selectlayers a.active:hover {
+    background: #134f5cff;
+}
 
 /**--------------------circular-strategies page**/ 
 

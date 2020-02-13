@@ -190,8 +190,8 @@ function createPopUp(currentFeature) {
     if (popUps[0]) popUps[0].remove();
     var popup = new mapboxgl.Popup({ closeOnClick: false })
         .setLngLat(currentFeature.geometry.coordinates)
-        .setHTML('<h3>Sweetgreen</h3>' +
-            '<h4>' + currentFeature.properties.address + '</h4>')
+        .setHTML('<h4>' + currentFeature.properties['STORE_NAME'] + '</h4>' +
+            '<h3>' + currentFeature.properties['ADDRESS_LINE1'] + '</h3>')
         .addTo(map);
 }
 

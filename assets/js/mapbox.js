@@ -8,7 +8,7 @@ const home = denver;
 
 // Add the map to the page
 
-var map = new mapboxgl.Map({             
+var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
     center: [-105.0178157, 39.737925],
@@ -105,13 +105,13 @@ return features in one source layer in the vector source */
 let allFeatures = [];
 
 map.on('idle', function () {
-    allFeatures = map.queryRenderedFeatures({layers: ['shops']});
+    allFeatures = map.queryRenderedFeatures({ layers: ['shops'] });
     console.log("idle features: ", allFeatures);
     buildLocationList(allFeatures);
 });
 
-const listings = document.getElementById('listings'); 
- 
+const listings = document.getElementById('listings');
+
 function buildLocationList(features) {          // Build listing
 
     console.log("buildLocationList ", features);
@@ -135,34 +135,21 @@ function buildLocationList(features) {          // Build listing
         listing.className = 'item';
 
         /* Add the link to the individual listing created above. */
-        var link = listing.appendChild(document.createElement('a'));
+        var link = listing.appendChild(document.createElement('div'));
         link.href = '#';
         link.className = 'stockholmlist';
         link.id = "link-" + i;
         link.innerHTML = prop['STORE_NAME'];
 
+
         /* Add details to the individual listing. */
         var details = listing.appendChild(document.createElement('div'));
         details.innerHTML = prop['ADDRESS_LINE1'];
-        if (prop.phone) {
-            details.innerHTML += ' · ' + prop.phoneFormatted;
-        };
-        
-        link.addEventListener('click', function(){
-            for (var i=0; i < feature.features.length; i++) {
-              if (this.id === "link-" + feature.features[i].properties.id) {
-                var clickedListing = feature.features[i];
-                flyToStore(clickedListing);
-                createPopUp(clickedListing);
-              }
-            }
-            var activeItem = document.getElementsByClassName('active');
-            if (activeItem[0]) {
-              activeItem[0].classList.remove('active');
-            }
-            this.parentNode.classList.add('active');
-            
-          });
+
+        listing.addEventListener('click', function () {
+            flyToStore(feature);
+            createPopUp(feature);
+        });
     });
 }
 
@@ -173,7 +160,7 @@ filterBox.addEventListener('keyup', function (event) {
     const typedValue = event.target.value.trim().toLowerCase();
     console.log("Field is now: ", typedValue);
     console.log("allFeatures: ", allFeatures);
-    const filtered = allFeatures.filter(function(feature) {
+    const filtered = allFeatures.filter(function (feature) {
         const storeName = feature.properties['STORE_NAME'].trim().toLowerCase();
         return storeName.indexOf(typedValue) >= 0
     });

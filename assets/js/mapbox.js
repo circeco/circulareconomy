@@ -118,6 +118,8 @@ map.on('idle', function () {
 
 
 
+
+
 // Build listing 
 function buildLocationList(features) {
 
@@ -130,7 +132,7 @@ function buildLocationList(features) {
     features.forEach(function (feature, i) {
 
         /**
-         * Create a shortcut for `store.properties`,
+         * Create a shortcut for `shop.properties`,
          * which will be used several times below.
          **/
         var prop = feature.properties;
@@ -155,11 +157,50 @@ function buildLocationList(features) {
         details.innerHTML = prop['ADDRESS_LINE1'];
         if (prop.phone) {
             details.innerHTML += ' · ' + prop.phoneFormatted;
-        }
+        };
+        
+
+        link.addEventListener('click', function(){
+            for (var i=0; i < feature.features.length; i++) {
+              if (this.id === "link-" + feature.features[i].properties.id) {
+                var clickedListing = feature.features[i];
+                flyToStore(clickedListing);
+                createPopUp(clickedListing);
+              }
+            }
+            var activeItem = document.getElementsByClassName('active');
+            if (activeItem[0]) {
+              activeItem[0].classList.remove('active');
+            }
+            this.parentNode.classList.add('active');
+            
+          });
     });
 }
 
+/**
+ * Use Mapbox GL JS's `flyTo` to move the camera smoothly
+ * a given center point.
+ **/
+function flyToStore(currentFeature) {
+    map.flyTo({
+        center: currentFeature.geometry.coordinates,
+        zoom: 15
+    });
+}
 
+/**
+ * Create a Mapbox GL JS `Popup`.
+ **/
+function createPopUp(currentFeature) {
+    var popUps = document.getElementsByClassName('mapboxgl-popup');
+    if (popUps[0]) popUps[0].remove();
+    var popup = new mapboxgl.Popup({ closeOnClick: false })
+        .setLngLat(currentFeature.geometry.coordinates)
+        .setHTML('<h3>Sweetgreen</h3>' +
+            '<h4>' + currentFeature.properties.address + '</h4>')
+        .addTo(map);
+}
 
 
 

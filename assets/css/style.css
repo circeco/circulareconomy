@@ -393,6 +393,11 @@ input {
 }
 
 /* Marker tweaks */
+
+.mapboxgl-popup {
+    padding-bottom: 50px;
+}
+
 .mapboxgl-popup-close-button {
     display: none;
 }

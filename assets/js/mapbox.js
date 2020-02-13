@@ -1,25 +1,25 @@
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazZhcW9mdm0wN3ZsM29wOXF6bXRwaDhxIn0.iz4i_eSrghnGX02vj7ATDg';
 
-// Add Constant 
+// Define Constants 
 
 const stockholm = [18.072, 59.325];
 const denver = [-105.0178157, 39.737925];
 const home = denver;
 
-// Add the map to the page 
+// Add the map to the page
 
-var map = new mapboxgl.Map({
+var map = new mapboxgl.Map({             
     container: 'map',
     style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
     center: [-105.0178157, 39.737925],
     zoom: 13
 });
 
-// Load the tilequery 
 
-map.on('load', function () {
-    console.log("Map loading...");
+map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');   // Add zoom and rotation controls to the map
+
+
+map.on('load', function () {        // Load the tilequery 
 
     map.addSource('tilequery', {
         type: "geojson",
@@ -30,18 +30,14 @@ map.on('load', function () {
         cluster: true,
         clusterMaxZoom: 14, // Max zoom to cluster points on
         clusterRadius: 50   // Radius of each cluster when clustering points (defaults to 50)
-
     });
 
-    // Add map airport layer 
-
-    map.addSource('museums', {
+    map.addSource('museums', {      // Add map airport layer 
         type: 'vector',
         url: 'mapbox://circeco.ck69km0681xb02to3wcdvvbss-0mo1s'
     });
 
-    console.log("Map sourching...");
-    map.addLayer({
+    map.addLayer({              // define the style for display the data 
         'id': 'museums',
         'type': 'circle',
         'source': 'museums',
@@ -55,17 +51,13 @@ map.on('load', function () {
         'source-layer': 'airports'
     });
 
-    // Add map airport layer 
 
-    map.addSource('shops', {
+    map.addSource('shops', {        // Add map shop layer 
         type: 'vector',
         url: 'mapbox://circeco.ck69ksutg08g02imwptgjxa6d-19vzm',
     });
 
-    console.log("Map layering ...");
-    // define the style for display the data 
-
-    map.addLayer({
+    map.addLayer({                  // define the style for display the data 
         id: 'shops',
         type: 'circle',
         source: 'shops',
@@ -106,22 +98,18 @@ map.on('load', function () {
 });
 
 
-/* Add list of shops next to the map */
+// Add list of shops next to the map 
+/* using the idle event when the map is loading to set up features for the listing queryRenderedFeatures 
+return features in one source layer in the vector source */
 
-// using the idle event when the map is loading to set up features for the listing 
-// queryRenderedFeatures return features in one source layer in the vector source 
 map.on('idle', function () {
     const features = map.queryRenderedFeatures({layers: ['shops']});
     console.log("idle features: ", features);
     buildLocationList(features)
 });
 
-
-
-
-
-// Build listing 
-function buildLocationList(features) {
+ 
+function buildLocationList(features) {          // Build listing
 
     console.log("buildLocationList ", features);
 
@@ -213,7 +201,7 @@ function createPopUp(currentFeature) {
 
 
 
-// Hide and show layers 
+// Toggleable hide and show layers 
 
 var toggleableLayerIds = ['shops', 'museums'];
 
@@ -247,8 +235,7 @@ for (var i = 0; i < toggleableLayerIds.length; i++) {
 
 
 
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
 
 // Geocoder 
 

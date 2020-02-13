@@ -188,7 +188,7 @@ function flyToStore(currentFeature) {
 function createPopUp(currentFeature) {
     var popUps = document.getElementsByClassName('mapboxgl-popup');
     if (popUps[0]) popUps[0].remove();
-    var popup = new mapboxgl.Popup({ closeOnClick: false })
+    var popup = new mapboxgl.Popup({ closeOnClick: true })
         .setLngLat(currentFeature.geometry.coordinates)
         .setHTML('<h4>' + currentFeature.properties['STORE_NAME'] + '</h4>' +
             '<h3>' + currentFeature.properties['ADDRESS_LINE1'] + '</h3>')

@@ -102,18 +102,19 @@ map.on('load', function () {        // Load the tilequery
 /* using the idle event when the map is loading to set up features for the listing queryRenderedFeatures 
 return features in one source layer in the vector source */
 
+let allFeatures = [];
+
 map.on('idle', function () {
-    const features = map.queryRenderedFeatures({layers: ['shops']});
-    console.log("idle features: ", features);
-    buildLocationList(features)
+    allFeatures = map.queryRenderedFeatures({layers: ['shops']});
+    console.log("idle features: ", allFeatures);
+    buildLocationList(allFeatures);
 });
 
+const listings = document.getElementById('listings'); 
  
 function buildLocationList(features) {          // Build listing
 
     console.log("buildLocationList ", features);
-
-    const listings = document.getElementById('listings'); 
 
     listings.innerHTML = ''; /* listing only what can be seen in the map */
 
@@ -147,7 +148,6 @@ function buildLocationList(features) {          // Build listing
             details.innerHTML += ' · ' + prop.phoneFormatted;
         };
         
-
         link.addEventListener('click', function(){
             for (var i=0; i < feature.features.length; i++) {
               if (this.id === "link-" + feature.features[i].properties.id) {
@@ -165,6 +165,24 @@ function buildLocationList(features) {          // Build listing
           });
     });
 }
+
+
+const filterBox = document.getElementById('feature-filter');
+
+filterBox.addEventListener('keyup', function (event) {
+    const typedValue = event.target.value.trim().toLowerCase();
+    console.log("Field is now: ", typedValue);
+    console.log("allFeatures: ", allFeatures);
+    const filtered = allFeatures.filter(function(feature) {
+        const storeName = feature.properties['STORE_NAME'].trim().toLowerCase();
+        return storeName.indexOf(typedValue) >= 0
+    });
+
+    console.log("Filtered: ", filtered);
+    buildLocationList(filtered);
+});
+
+
 
 /**
  * Use Mapbox GL JS's `flyTo` to move the camera smoothly
@@ -189,6 +207,8 @@ function createPopUp(currentFeature) {
             '<h4>' + currentFeature.properties.address + '</h4>')
         .addTo(map);
 }
+
+
 
 
 

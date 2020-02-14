@@ -31,7 +31,7 @@ h2 {
     font-family: 'Bebas Neue', cursive; 
     font-size: 50px !important;
     text-align: center;
-    margin-top: 10% !important; 
+    padding-top: 10% !important; 
     text-decoration: underline #FF5252;
 }
 
@@ -217,10 +217,14 @@ p {
 
 /**----------------big title**/
 
+#title_section {
+    
+}
+
 .title {
     font-size: 90px;
     text-align: center;
-    margin: 15% auto 3%;
+    padding: 15% 0 3%;
     text-decoration: underline #FF5252; 
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;

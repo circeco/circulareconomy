@@ -73,6 +73,9 @@ p {
     overflow: hidden;
     background-color: white;
     color: black;
+    position:fixed;
+    width: 100%;
+    top:0;
 }
 
 #logo {

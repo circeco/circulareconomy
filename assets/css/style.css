@@ -251,7 +251,7 @@ p {
 /**------------------circaction**/
 
 .circactions {
-    margin: 1% auto;
+    padding:5% 2% 10%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -305,8 +305,7 @@ p {
 /**--------------------mapbox**/ 
 
 .atlas {
-    margin: 1% auto;
-    padding: 2%;
+    padding: 10% 2%;
     display: flex;
     flex-wrap: wrap;
     background-color: #d0e0e3ff;
@@ -314,7 +313,8 @@ p {
 
 .atlas h4 {
     width: 100%;
-    text-align: center;
+    text-align: left;
+    padding:1%;
 }
 
 .sidebar {

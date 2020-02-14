@@ -18,6 +18,10 @@
     border-radius: 0px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0 !important;
     font-family: 'Khand', sans-serif !important; 

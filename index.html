@@ -18,10 +18,10 @@
     <title>Circeco</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".topnav" data-offset="50">
     <header>
         <div class="topnav" id="myTopnav">
-            <a href="#title_section" id="logo" class="active"></a>
+            <a class="active" href="#title_section" id="logo"></a>
             <a href="#circular_action">Circular Action</a>
             <a href="#circular_atlas">Circular Atlas</a>
             <a href="#footer">Contact</a>
@@ -31,7 +31,7 @@
     </header>
 
     <section>
-        <div id="title_section">
+        <div id="title_section" class="section">
             <p class="title">CIRC<span id="hidden">ULAR </span>ECO<span id="hidden">SYSTEM</span></p>
             <p class="subtitle">solutions that inspire local actions and strategies toward a sustainble future</p>
         </div>
@@ -42,7 +42,7 @@
         </div>
     </section>
     
-    <section id="circular_action">
+    <section id="circular_action" class="section">
         <h2>Circular Action</h2>
         <p>reusing or recycling are examples of circular actions that help build circular systems of MATERIAL AND PRODUCT by slowing the loop or closing the loop</p>
 
@@ -76,7 +76,7 @@
         </div>
     </section>
 
-    <section class="atlas" id="circular_atlas">
+    <section class="section atlas" id="circular_atlas">
         <h4>CIRCULAR ATLAS Find local circular initiative in your area!</h4>
         <div class='sidebar'>
 			<fieldset>
@@ -95,7 +95,7 @@
 
 
 
-    <footer class="row" id="footer">
+    <footer class="section row" id="footer">
         <div class="col-6 info-footer">
             CIRCECO info
         </div>
@@ -113,9 +113,8 @@
                 </div>
             </form>
         </div>
-
     </footer>
-
+    <script src="assets/js/scrollspy.js"></script>    
 
 </body>
 </html>

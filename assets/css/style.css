@@ -246,7 +246,6 @@ p {
         .title :hover + #hidden {
             display:inline;
             color: #FF5252;
-
         }
 
 #red-wood {
@@ -254,7 +253,7 @@ p {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 300px;
     width: 100%;
     overflow: hidden;
     margin: 0;
@@ -317,16 +316,20 @@ p {
 /**--------------------mapbox**/ 
 
 .atlas {
-    padding: 10% 2%;
+    padding: 5% 2% 10%;
     display: flex;
     flex-wrap: wrap;
     background-color: #d0e0e3ff;
 }
 
-.atlas h4 {
+#circular_atlas {
+    padding-top: 10%;
+}
+
+#circular_atlas h4 {
     width: 100%;
-    text-align: left;
-    padding:1%;
+    text-align: center;
+    padding:10% auto 0 !important;
 }
 
 .sidebar {

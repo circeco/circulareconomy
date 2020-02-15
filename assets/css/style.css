@@ -549,20 +549,11 @@ input {
 
 /**-------------------------footer**/
 
-footer.row {
-    display: flex;
-    margin: 0;
-}
-
-footer {
+#actual-footer {
     background-color: #0c343dff;
     margin: 0;
     color: white;
     padding-top: 5%;
-}
-
-.info-footer {
-    
 }
 
 .form-control {

@@ -218,13 +218,13 @@ p {
 /**----------------big title**/
 
 #title_section {
-    
+    min-height: 700px;
 }
 
 .title {
     font-size: 90px;
     text-align: center;
-    padding: 200px 0 3%;
+    padding: 240px 0 3%;
     text-decoration: underline #FF5252; 
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;

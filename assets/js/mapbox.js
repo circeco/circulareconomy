@@ -112,6 +112,7 @@ map.on('idle', function () {
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', 'shops', function (e) {
+        const currentFeature = e.features[0];
         var coordinates = e.features[0].geometry.coordinates.slice();
         var description = e.features[0].properties.description;
 
@@ -126,12 +127,6 @@ map.on('idle', function () {
             .setLngLat(coordinates)
             .setHTML('<h4>' + currentFeature.properties['STORE_NAME'] + '</h4>' +
                     '<h3>' + currentFeature.properties['ADDRESS_LINE1'] + '</h3>')
-            .addTo(map);
-
-        new mapboxgl.Popup()
-            .setLngLat(geometry.coordinates)
-            .setHTML('<h4>' + properties['STORE_NAME'] + '</h4>' +
-                '<h3>' + properties['ADDRESS_LINE1'] + '</h3>')
             .addTo(map);
     });
 

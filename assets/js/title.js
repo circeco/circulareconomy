@@ -3,10 +3,12 @@ $(function() {
   $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 200) {
+    if (scroll >= 30) {
       text.removeClass("hidden");
-    } else {
+    }if (scroll >= 150) {
       text.addClass("hidden");
+    } else {
+      text.removeClass("hidden");
     }
   });
 });

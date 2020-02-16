@@ -236,16 +236,6 @@ p {
     line-height: 0.7;
 }
 
-        #hidden {
-            display:none;
-            transition: 5s;
-        }
-
-        .title :hover + #hidden {
-            display:inline;
-            color: #FF5252;
-        }
-
 #red-wood {
     background: url("../img/red-wood.jpg");
     background-position: center;
@@ -271,7 +261,7 @@ p {
     width: 220px;
     max-width: 320px;
     margin: 2% auto;
-    transition: 0.4s;
+    transition: 0.8s;
 }
 
 .circactions h4 {
@@ -279,35 +269,46 @@ p {
     color:white;
     padding: 5%;
     text-align: center;
+    top: 40%;
+    position: relative;
 }
 
 .circactions p {
     text-align: left;
-    margin: 0 5% 2%;
+    margin: 2% 5%;
     color: white;
+    visibility: hidden;
 }
 
-.refuse {
+.card:hover p {
+    visibility:visible; 
+}
+
+.card:hover h4 {
+    visibility: hidden;
+}
+
+#refuse {
     background-color: #0c343dff;
 }
 
-.reduce {
+#reduce {
     background-color: #134f5cff;
 }
 
-.reuse {
+#reuse {
     background-color: #45818eff;
 }
 
-.repair {
+#repair {
     background-color: #76a5afff;
 }
 
-.remanu {
+#remanu {
     background-color: #a2c4c9ff;
 }
 
-.recycle {
+#recycle {
     background-color: #d0e0e3ff;
 }
 

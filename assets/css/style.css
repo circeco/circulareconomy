@@ -179,38 +179,38 @@ p {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
-  }
-  .topnav a#icon {
+    }
+    .topnav a#icon {
     float: right;
     display: block;
-  }
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive #icon {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive #icon {
     position: absolute;
     right: 0;
     top: 0;
-  }
-  .topnav.responsive a {
+    }
+    .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
-  }
-  .topnav.responsive .dropdown {
-      float: none;
     }
-  .topnav.responsive .dropdown-content {
-      position: relative;
+    .topnav.responsive .dropdown {
+        float: none;
     }
-  .topnav.responsive .dropdown .dropbtn {
+    .topnav.responsive .dropdown-content {
+        position: relative;
+    }
+    .topnav.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
     text-align: left;
-  }
+    }
 }
 
 /**----------------big title**/
@@ -245,6 +245,7 @@ p {
     width: 100%;
     overflow: hidden;
     margin: 0;
+    background-attachment: fixed;
 }
 
 /**------------------circaction**/
@@ -338,11 +339,20 @@ p {
 }
 
 .sidebar {
-    width: 20%;
+    width: 15%;
     height: 560px;
     top: 0;
     left: 0;
     overflow: hidden;
+    margin: 0 2%;
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
 }
 
 .sidebar:hover ::-webkit-scrollbar {

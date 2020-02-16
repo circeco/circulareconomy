@@ -9,10 +9,6 @@
     background: rgba(0, 0, 0, 0.1);
 }
 
-::-webkit-scrollbar-track {
-    background: none;
-}
-
 ::-webkit-scrollbar-thumb {
     background: #FF5252;
     border-radius: 0px;
@@ -104,7 +100,6 @@ p {
     color: black;
     text-align: center;
     padding: 0 10px;
-
     font-size: 30px;
     margin: 8px;
     font-family: 'Chathura', sans-serif;
@@ -116,13 +111,12 @@ p {
     color: white;
 }
 
-.topnav .icon {
-    display: none;
-}
-
-.icon {
+#icon {
+    font-family:unset;
+    font-weight: unset;
     margin: 0 !important;
-    font-size: 35px !important;
+    font-size: 36px !important;
+    display: none;
 }
 
 .dropdown {
@@ -188,7 +182,7 @@ p {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
-  .topnav a.icon {
+  .topnav a#icon {
     float: right;
     display: block;
   }
@@ -196,7 +190,7 @@ p {
 
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
+  .topnav.responsive #icon {
     position: absolute;
     right: 0;
     top: 0;
@@ -206,8 +200,12 @@ p {
     display: block;
     text-align: left;
   }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown {
+      float: none;
+    }
+  .topnav.responsive .dropdown-content {
+      position: relative;
+    }
   .topnav.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;

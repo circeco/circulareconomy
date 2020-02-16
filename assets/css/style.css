@@ -89,6 +89,7 @@ p {
     overflow: hidden;
     margin: 0 8px 0;
     transition: 0.4s;
+    border-radius: .25rem;
 }
 
 #logo:hover {
@@ -250,7 +251,7 @@ p {
 /**------------------circaction**/
 
 .circactions {
-    padding:5% 2% 10%;
+    padding:5% 2%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -262,6 +263,10 @@ p {
     max-width: 320px;
     margin: 2% auto;
     transition: 0.8s;
+}
+
+.card {
+    border: unset !important ;
 }
 
 .circactions h4 {
@@ -278,6 +283,8 @@ p {
     margin: 2% 5%;
     color: white;
     visibility: hidden;
+    position: absolute;
+    top: 10%;
 }
 
 .card:hover p {

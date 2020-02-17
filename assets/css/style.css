@@ -263,15 +263,18 @@ p {
     .map {width: 75% !important}
     .atlas {padding: 10% 2% 20% !important}
     #circular_atlas {padding-top: 15% !important}
+    #reuse, #refuse, #reduce, #repair, #remanu, #recycle {height: 200px}
 }
 
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 450px){
     .title {font-size: 40px; padding: 0px}
     #subtitle, p {font-size: 30px; margin:300px 2% 300px}
     #red-wood {height: 180px}
-    
-
+    #reuse, #refuse, #reduce, #repair, #remanu, #recycle {height: 120px; width: 90%}
+    .circactions h4 {top: 20% !important}
+    .circactions p {top:5% !important}
+    .rw-wrapper {width: 80%}
 }
 
 
@@ -291,13 +294,8 @@ p {
     clear:both;
     height: 300px;
     width: 220px;
-    max-width: 320px;
     margin: 2% auto;
-    transition: 0.8s;
-}
-
-.card {
-    border: unset !important ;
+    border: unset !important;    
 }
 
 .circactions h4 {

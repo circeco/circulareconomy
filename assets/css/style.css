@@ -65,6 +65,42 @@ p {
     padding: 0;
 }
 
+/**----------------big title**/
+
+#needed {
+    position: relative;
+    height: 20px;
+}
+
+.title {
+    font-size: 90px;
+    text-align: center;
+    padding: 240px 0 3%;
+    text-decoration: underline #FF5252; 
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#subtitle {
+    font-size: 40px;
+    margin: 440px auto 220px;
+    text-align: center;
+    font-family: 'Chathura', sans-serif;
+    line-height: 0.7;
+}
+
+#red-wood {
+    background: url("../img/red-wood.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    background-attachment: fixed;
+}
+
 
 /**---------------------navbar**/
 
@@ -213,41 +249,28 @@ p {
     }
 }
 
-/**----------------big title**/
+/*--------------------Resizing codes */
 
-#needed {
-    position: relative;
-    height: 20px;
+@media screen and (max-width: 900px){
+
+    .title {font-size: 50px; padding: 0px}
+    #subtitle, p {font-size: 30px; margin:380px auto 400px}
+    .topnav a {font-size: 24px !important}
+    #red-wood {height: 220px}
+    .rw-wrapper h2, span {font-size: 30px !important}
+    #circular_action h4, p {font-size: 24px !important}
+    .sidebar {width: 20% !important}
+    .map {width: 75% !important}
 }
 
-.title {
-    font-size: 90px;
-    text-align: center;
-    padding: 240px 0 3%;
-    text-decoration: underline #FF5252; 
-    cursor: pointer;
-    font-family: 'Bebas Neue', cursive;
+
+@media screen and (max-width: 900px){
+
+
+
+
 }
 
-#subtitle {
-    font-size: 40px;
-    margin: 440px auto 220px;
-    text-align: center;
-    font-family: 'Chathura', sans-serif;
-    line-height: 0.7;
-}
-
-#red-wood {
-    background: url("../img/red-wood.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 300px;
-    width: 100%;
-    overflow: hidden;
-    margin: 0;
-    background-attachment: fixed;
-}
 
 /**------------------circaction**/
 
@@ -255,6 +278,10 @@ p {
     padding:5% 2%;
     display: flex;
     flex-wrap: wrap;
+}
+
+#circular_action p {
+    margin: 2% 5%;
 }
 
 .circactions div {
@@ -512,7 +539,6 @@ input {
 #selectlayers a.active:hover {
     background: #134f5cff;
 }
-
 
 /**-------------------------footer**/
 

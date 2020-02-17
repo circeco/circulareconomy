@@ -346,6 +346,7 @@ p {
     left: 0;
     overflow: hidden;
     margin: 0 2%;
+    border: solid 6px #0c343dff;
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -386,7 +387,7 @@ p {
 }
 
 .listings {
-    height: 100%;
+    height: 440px;
     overflow: auto;
     background-color: #f9f9f9;
 }
@@ -398,9 +399,7 @@ p {
 }
 
 fieldset {
-    background: #ddd;
     border: none;
-    padding: 5px !important;
 }
 
 input {
@@ -514,56 +513,6 @@ input {
     background: #134f5cff;
 }
 
-/**--------------------circular-strategies page**/ 
-
-#forest_img {
-    background: url("../img/forest.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 600px;
-    width: 100%;
-    overflow: hidden;
-    margin: 0;
-}
-
-.protect, .restore {
-    text-align: center;
-    color: white;
-    border: solid #FF5252 8px; 
-    width: 40%;
-    height: max-content; 
-    padding: 1%;
-}
-
-.protect {
-    margin: 10% 2% 10% auto;
-}
-
-.restore {
-    margin: 10% auto 10% 2%;
-}
-
-.protect > h3, .restore > h3 {
-    font-size: 40px;
-}
-
-.protect > p, .protect > p {
-    font-size: 30px;
-    font-weight: 700;
-    font-family: 'Chathura', sans-serif;
-    line-height: 0.8;
-}
-
-@media screen and (max-width: 600px) {
-    .protect {
-        margin: 10% 5%;
-    }
-
-    .restore {
-        margin: 5%;
-    }
-}
 
 /**-------------------------footer**/
 

@@ -261,13 +261,16 @@ p {
     #circular_action h4, p {font-size: 24px !important}
     .sidebar {width: 20% !important}
     .map {width: 75% !important}
+    .atlas {padding: 10% 2% 20% !important}
+    #circular_atlas {padding-top: 15% !important}
 }
 
 
-@media screen and (max-width: 900px){
-
-
-
+@media screen and (max-width: 400px){
+    .title {font-size: 40px; padding: 0px}
+    #subtitle, p {font-size: 30px; margin:300px 2% 300px}
+    #red-wood {height: 180px}
+    
 
 }
 
@@ -546,7 +549,7 @@ input {
     background-color: #0c343dff;
     margin: 0;
     color: white;
-    padding-top: 5%;
+    padding: 5% 2% 10%;
 }
 
 .form-control {

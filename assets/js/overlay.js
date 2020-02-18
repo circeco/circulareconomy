@@ -1,6 +1,10 @@
 
 // Add some text to explain and reference
 
+
+
+
+
 function openNav() {
   document.getElementById("maplist").style.width = "50%";
 }

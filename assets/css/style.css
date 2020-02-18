@@ -294,7 +294,7 @@ p {
     #search_button {
         position: absolute;
         right: 10px;
-        background: url("../img/search_button_red.jpg");
+        background: url("../img/search_button.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         margin: 10px;
@@ -302,11 +302,15 @@ p {
         z-index: 1;
     }
 
-    .closebtn {
-    position: absolute;
-    top: 20%x;
-    right: 5%;
-    font-size: 40px;
+    #close_button {
+        position: absolute;
+        right: 10px;
+        background: url("../img/close_button.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 10px;
+        padding: 20px;
+        z-index: 1;
     }
 }
 

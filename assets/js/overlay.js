@@ -2,13 +2,11 @@
 // Add some text to explain and reference
 
 
-
-
-
-function openNav() {
-  document.getElementById("maplist").style.width = "50%";
-}
-
-function closeNav() {
-  document.getElementById("maplist").style.width = "0%";
+function mapListBtn() {
+  var x = document.getElementById("maplist");
+  if (x.style.width === "0%") {
+    x.style.width = "50%";
+  } else {
+    x.style.width = "0%";
+  }
 }

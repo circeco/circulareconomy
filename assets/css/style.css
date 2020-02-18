@@ -250,11 +250,10 @@ p {
 }
 
 /*--------------------Resizing codes */
-@media screen and (min-width: 900px){
+@media screen and (min-width: 450px){
     #maplist {width: 20%}
     #sidebar {width: 98% !important}
 }
-
 
 @media screen and (max-width: 900px){
     .title {font-size: 50px; padding: 0px}
@@ -263,14 +262,12 @@ p {
     #red-wood {height: 220px}
     .rw-wrapper h2, span {font-size: 30px !important}
     #circular_action h4, p {font-size: 24px !important}
-    #sidebar {width: 100% !important}
+    #sidebar {width: 98% !important}
     .map {width: 75% !important}
     .atlas {padding: 10% 2% 20% !important}
     #circular_atlas {padding-top: 15% !important}
     #reuse, #refuse, #reduce, #repair, #remanu, #recycle {height: 200px}
-    #maplist {width: 25%}
 }
-
 
 @media screen and (max-width: 450px){
     .title {font-size: 40px; padding: 0px}
@@ -295,7 +292,6 @@ p {
         overflow-x: hidden;
         transition: 0.5s;
     }
-
     #search_button {
         position: absolute;
         right: 10px;
@@ -306,7 +302,6 @@ p {
         padding: 20px;
         z-index: 1;
     }
-
     #close_button {
         position: absolute;
         right: 0;

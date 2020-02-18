@@ -277,29 +277,37 @@ p {
     .rw-wrapper {width: 60% !important}
     #circular_atlas h4 {font-size: 18px !important}
     .atlas {display:block !important; padding-top: 2% !important}
-    #sidebar {width: 100% !important; margin: 2% auto !important}
+    #sidebar {width: 100% !important; margin: 30% auto 0!important}
     #map {scroll-snap-align: end; width: 100% !important}
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
 
-}
+    #search_button {
+        position: absolute;
+        right: 10px;
+        background: url("../img/search_button_red.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 10px;
+        padding: 20px;
+        z-index: 1;
+    }
 
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 20%x;
-  right: 2%;
-  font-size: 60px;
+    .closebtn {
+    position: absolute;
+    top: 20%x;
+    right: 5%;
+    font-size: 40px;
+    }
 }
 
 
@@ -426,11 +434,12 @@ p {
 }
 
 .atlas a {
-  color: #404040;
+  color: #FF5252;
 }
 
 .atlas a:hover {
-  color: #101010;
+  color: #FF5252;
+  text-decoration: none;
 }
 
 .stockholmlist {

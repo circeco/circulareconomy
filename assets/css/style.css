@@ -304,7 +304,7 @@ p {
 
     #close_button {
         position: absolute;
-        right: 5px;
+        right: 0;
         background: url("../img/close_button.jpg");
         background-repeat: no-repeat;
         background-size: cover;

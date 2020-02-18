@@ -72,6 +72,10 @@ p {
     height: 20px;
 }
 
+#title_section {
+    scroll-snap-align: start;
+}
+
 .title {
     font-size: 90px;
     text-align: center;
@@ -225,7 +229,6 @@ p {
 }
 
 @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
     .topnav.responsive #icon {
     position: absolute;
     right: 0;
@@ -238,9 +241,6 @@ p {
     }
     .topnav.responsive .dropdown {
         float: none;
-    }
-    .topnav.responsive .dropdown-content {
-        position: relative;
     }
     .topnav.responsive .dropdown .dropbtn {
     display: block;
@@ -259,7 +259,7 @@ p {
     #red-wood {height: 220px}
     .rw-wrapper h2, span {font-size: 30px !important}
     #circular_action h4, p {font-size: 24px !important}
-    .sidebar {width: 20% !important}
+    #sidebar {width: 20% !important}
     .map {width: 75% !important}
     .atlas {padding: 10% 2% 20% !important}
     #circular_atlas {padding-top: 15% !important}
@@ -274,7 +274,12 @@ p {
     #reuse, #refuse, #reduce, #repair, #remanu, #recycle {height: 120px; width: 90%}
     .circactions h4 {top: 20% !important}
     .circactions p {top:5% !important}
-    .rw-wrapper {width: 80%}
+    .rw-wrapper {width: 60% !important}
+    #circular_atlas h4 {font-size: 18px !important}
+    .atlas {display:block !important; padding-top: 2% !important}
+    #sidebar {width: 50% !important; margin: 2% auto !important}
+
+
 }
 
 
@@ -359,6 +364,7 @@ p {
 
 #circular_atlas {
     padding-top: 10%;
+    scroll-snap-align: start;
 }
 
 #circular_atlas h4 {
@@ -367,7 +373,7 @@ p {
     padding:10% auto 0 !important;
 }
 
-.sidebar {
+#sidebar {
     width: 15%;
     height: 560px;
     top: 0;

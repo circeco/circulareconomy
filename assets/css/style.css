@@ -304,7 +304,7 @@ p {
 
     #close_button {
         position: absolute;
-        right: 5px;
+        right: 0;
         background: url("../img/close_button.jpg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -406,7 +406,7 @@ p {
 }
 
 #sidebar {
-    width: 15%;
+    width: 15% !important;
     height: 560px;
     top: 0;
     left: 0;

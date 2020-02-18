@@ -3,7 +3,7 @@
 
 function pleaseBeGood() {
     if ("@media screen and (max-width: 450px)")
-        return mapListBtn()
+        mapListBtn()
 }
 
 

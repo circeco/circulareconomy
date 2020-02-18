@@ -103,18 +103,23 @@
     <section class="section" id="circular_atlas">
         <h4>CIRCULAR ATLAS: Find circular initiative in your area!</h4>
         <div class="atlas">
-            <div id='sidebar'>
-                <fieldset>
-                    <input id="feature-filter" type="text" placeholder="Filter results by name"/>
-                </fieldset>
-                <nav id="selectlayers"></nav>
-                <div id='listings' class='listings'></div>
+            <div id="maplist" class="overlay"> 
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div id='sidebar'>
+                    <fieldset>
+                        <input id="feature-filter" type="text" placeholder="Filter results by name"/>
+                    </fieldset>
+                    <nav id="selectlayers"></nav>
+                    <div id='listings' class='listings'></div>
+                </div>
             </div>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; SEARCH</span>
             <div id='map' class='map'>
             </div>
         </div>
 
         <script src="assets/js/mapbox.js"></script>
+        <script src="assets/js/overlay.js"></script>
     </section>
 
 

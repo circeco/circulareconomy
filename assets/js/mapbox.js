@@ -105,7 +105,7 @@ return features in one source layer in the vector source */
 let allFeatures = [];
 
 map.on('idle', function () {
-    allFeatures = map.queryRenderedFeatures({ layers: ['shops'] });
+    allFeatures = map.queryRenderedFeatures({ layers: ['shops', 'reuse'] });
     console.log("idle features: ", allFeatures);
     buildLocationList(allFeatures);
 
@@ -131,7 +131,7 @@ map.on('idle', function () {
     });
 
     // Change the cursor to a pointer when the mouse is over the places layer.
-    map.on('mouseenter', 'shops', function () {
+    map.on('mouseenter','shops', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
 

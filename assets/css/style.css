@@ -48,6 +48,7 @@ h5 {
     font-size: 20px !important;
     text-align: center;
     margin: 3% !important;
+    text-decoration: underline #FF5252;
 }
 
 p {
@@ -398,6 +399,7 @@ p {
 #circular_atlas {
     padding-top: 10%;
     scroll-snap-align: start;
+    line-height: 1.2;
 }
 
 #circular_atlas h4 {
@@ -492,57 +494,24 @@ input {
 
 /* Marker tweaks */
 
-.mapboxgl-popup {
-    padding-bottom: 50px;
-}
-
 .mapboxgl-popup-close-button {
     display: none;
 }
 
 .mapboxgl-popup-content {
-  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-  padding: 0;
-  width: 180px;
+  line-height: 1.2;
+  padding: 2%;
+  width: 120px;
 }
 
 .mapboxgl-popup-content-wrapper {
   padding: 1%;
 }
 
-.mapboxgl-popup-content h3 {
-  background: #91c949;
-  color: #fff;
-  margin: 0;
-  display: block;
-  padding: 10px;
-  border-radius: 3px 3px 0 0;
-  font-weight: 700;
-  margin-top: -15px;
-}
-
-.mapboxgl-popup-content h4 {
-  margin: 0;
-  display: block;
-  padding: 10px;
-  font-weight: 400;
-}
-
-.mapboxgl-popup-content div {
-  padding: 10px;
-}
-
 .mapboxgl-container .leaflet-marker-icon {
   cursor: pointer;
 }
 
-.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
-  margin-top: 15px;
-}
-
-.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
-  border-bottom-color: #91c949;
-}
 
 /* Hide and show map layers */
 

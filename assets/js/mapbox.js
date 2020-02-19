@@ -222,8 +222,10 @@ function createPopUp(currentFeature) {
     if (popUps[0]) popUps[0].remove();
     var popup = new mapboxgl.Popup({ closeOnClick: true })
         .setLngLat(currentFeature.geometry.coordinates)
-        .setHTML('<h4>' + currentFeature.properties['STORE_NAME'] + '</h4>' +
-            '<h3>' + currentFeature.properties['ADDRESS_LINE1'] + '</h3>')
+        .setHTML('<h5>' + currentFeature.properties['STORE_NAME'] + '</h5>' +
+            '<h4>' + currentFeature.properties['ADDRESS_LINE1'] + '</h4>' +
+            '<p>' + currentFeature.properties['DESCRIPTION'] + '<p>' + 
+            '<a>' + currentFeature.properties['WEB'] + '<a>')
         .addTo(map);
 }
 

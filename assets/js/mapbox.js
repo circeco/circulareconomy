@@ -11,7 +11,7 @@ const home = denver;
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
-    center: [-105.0178157, 39.737925],
+    center: [18.072, 59.325],
     zoom: 13
 });
 
@@ -32,15 +32,15 @@ map.on('load', function () {        // Load the tilequery
         clusterRadius: 50   // Radius of each cluster when clustering points (defaults to 50)
     });
 
-    map.addSource('museums', {      // Add map airport layer 
+    map.addSource('reuse', {      // Add map airport layer 
         type: 'vector',
-        url: 'mapbox://circeco.ck69km0681xb02to3wcdvvbss-0mo1s'
+        url: 'mapbox://circeco.ck6tfz7pg09ir2llh3r0k51sw-5565x'
     });
 
     map.addLayer({              // define the style for display the data 
-        'id': 'museums',
+        'id': 'reuse',
         'type': 'circle',
-        'source': 'museums',
+        'source': 'reuse',
         'layout': {
             'visibility': 'visible'
         },
@@ -48,7 +48,7 @@ map.on('load', function () {        // Load the tilequery
             'circle-radius': 8,
             'circle-color': 'rgba(55,148,179,1)'
         },
-        'source-layer': 'airports'
+        'source-layer': 'reuse'
     });
 
 
@@ -232,7 +232,7 @@ function createPopUp(currentFeature) {
 
 // Toggleable hide and show layers 
 
-var toggleableLayerIds = ['shops', 'museums'];
+var toggleableLayerIds = ['shops', 'reuse'];
 
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];

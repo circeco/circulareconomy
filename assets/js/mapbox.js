@@ -45,7 +45,7 @@ map.on('load', function () {        // Load the tilequery
             'visibility': 'visible'
         },
         'paint': {
-            'circle-radius': 8,
+            'circle-radius': 4,
             'circle-color': 'rgb(69, 129, 142)'
         },
         'source-layer': 'reuse'

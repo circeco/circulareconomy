@@ -46,7 +46,7 @@ map.on('load', function () {        // Load the tilequery
         },
         'paint': {
             'circle-radius': 8,
-            'circle-color': 'rgba(55,148,179,1)'
+            'circle-color': 'rgb(69, 129, 142)'
         },
         'source-layer': 'reuse'
     });
@@ -177,6 +177,10 @@ function buildLocationList(features) {          // Build listing
         /* Add details to the individual listing. */
         var details = listing.appendChild(document.createElement('div'));
         details.innerHTML = prop['ADDRESS_LINE1'];
+
+        /* Add details to the individual listing. */
+        var details = listing.appendChild(document.createElement('div'));
+        details.innerHTML = prop['STORE_TYPE'];
 
         listing.addEventListener('click', function () {
             flyToStore(feature);

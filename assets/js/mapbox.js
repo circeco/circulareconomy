@@ -247,7 +247,7 @@ function createPopUp(currentFeature) {
         .setHTML('<h5>' + currentFeature.properties['STORE_NAME'] + '</h5>' +
             '<h4>' + currentFeature.properties['ADDRESS_LINE1'] + '</h4>' +
             '<p>' + currentFeature.properties['DESCRIPTION'] + '<p>' + 
-            '<a>' + currentFeature.properties['WEB'] + '<a>')
+            '<a href="http://' + currentFeature.properties['WEB'] + '">' + currentFeature.properties.WEB + '</a>')
         .addTo(map);
 }
 

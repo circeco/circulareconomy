@@ -104,14 +104,7 @@ return features in one source layer in the vector source */
 
 let allFeatures = [];
 
-map.on('idle', function () {
-    allFeatures = map.queryRenderedFeatures({ layers: ['shops', 'reuse'] });
-    console.log("idle features: ", allFeatures);
-    buildLocationList(allFeatures);
-
-    // When a click event occurs on a feature in the places layer, open a popup at the
-    // location of the feature, with description HTML from its properties.
-    map.on('click', 'shops', function (e) {
+function popUp(e) {
         const currentFeature = e.features[0];
         var coordinates = e.features[0].geometry.coordinates.slice();
         var description = e.features[0].properties.description;
@@ -123,12 +116,37 @@ map.on('idle', function () {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
 
+        const props = currentFeature.properties
+
         new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML('<h4>' + currentFeature.properties['STORE_NAME'] + '</h4>' +
-                    '<h3>' + currentFeature.properties['ADDRESS_LINE1'] + '</h3>')
-            .addTo(map);
-    });
+            .setHTML('<h4>' + props['STORE_NAME'] + '</h4>' +
+                    '<h6>' + props['ADDRESS_LINE1'] + '</h6>' +
+                    '<a href="http://' + props['WEB'] + '">' + props.WEB + '</a>')
+            .addTo(map)
+
+        //const pop = new mapboxgl.Popup();
+        //pop.setLngLat(coordinates);
+        //pop.addTo(map);
+
+        //const link = document.createElement('a')
+        //link.href = "http://" + currentFeature.properties['WEB']
+        //link.text = currentFeature.properties['WEB']
+        //pop.setHTML(link.outerHTML)
+    };
+
+
+
+map.on('idle', function () {
+    allFeatures = map.queryRenderedFeatures({ layers: ['shops', 'reuse'] });
+    console.log("idle features: ", allFeatures);
+    buildLocationList(allFeatures);
+
+    // When a click event occurs on a feature in the places layer, open a popup at the
+    // location of the feature, with description HTML from its properties.
+    map.on('click', 'shops', popUp)
+
+    map.on('click', 'reuse', popUp)
 
     // Change the cursor to a pointer when the mouse is over the places layer.
     map.on('mouseenter','shops', function () {

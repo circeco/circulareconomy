@@ -52,15 +52,15 @@ map.on('load', function () {        // Load the tilequery
     });
 
 
-    map.addSource('shops', {        // Add map shop layer 
+    map.addSource('apparel', {        // Add map shop layer 
         type: 'vector',
-        url: 'mapbox://circeco.ck69ksutg08g02imwptgjxa6d-19vzm',
+        url: 'mapbox://circeco.ck6tfz7pg09ir2llh3r0k51sw-0919f',
     });
 
     map.addLayer({                  // define the style for display the data 
-        id: 'shops',
+        id: 'apparel',
         type: 'circle',
-        source: 'shops',
+        source: 'apparel',
         'source-layer': 'food_stores',
         paint: {
             "circle-stroke-color": "white",
@@ -80,16 +80,13 @@ map.on('load', function () {        // Load the tilequery
             },
             "circle-color": [
                 'match',
-                ['get', 'STORE_TYPE'],
-                'Convenience Store', '#FF8C00',
-                'Convenience Store With Gas', '#FF8C00',
-                'Pharmacy', '#FF8C00',
-                'Specialty Food Store', '#9ACD32',
-                'Small Grocery Store', '#008000',
-                'Supercenter', '#008000',
-                'Superette', '#008000',
-                'Supermarket', '#008000',
-                'Warehouse Club Store', '#008000',
+                ['get', 'LABEL'],
+                'reuse', '#FF5252',
+                'recycle', '#FF8C00',
+                'refuse', '#FF8C00',
+                'rethink', '#9ACD32',
+                'remake', '#008000',
+                'repair', '#008000',
                 '#FF0000' // any other store type
             ]
         }
@@ -138,13 +135,13 @@ function popUp(e) {
 
 
 map.on('idle', function () {
-    allFeatures = map.queryRenderedFeatures({ layers: ['shops', 'reuse'] });
+    allFeatures = map.queryRenderedFeatures({ layers: ['apparel', 'reuse'] });
     console.log("idle features: ", allFeatures);
     buildLocationList(allFeatures);
 
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
-    map.on('click', 'shops', popUp)
+    map.on('click', 'apparel', popUp)
 
     map.on('click', 'reuse', popUp)
 
@@ -256,7 +253,7 @@ function createPopUp(currentFeature) {
 
 // Toggleable hide and show layers 
 
-var toggleableLayerIds = ['shops', 'reuse'];
+var toggleableLayerIds = ['apparel', 'reuse'];
 
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];

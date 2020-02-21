@@ -102,35 +102,35 @@ return features in one source layer in the vector source */
 let allFeatures = [];
 
 function popUp(e) {
-        const currentFeature = e.features[0];
-        var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = e.features[0].properties.description;
+    const currentFeature = e.features[0];
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var description = e.features[0].properties.description;
 
-        // Ensure that if the map is zoomed out such that multiple
-        // copies of the feature are visible, the popup appears
-        // over the copy being pointed to.
-        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        }
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
 
-        const props = currentFeature.properties
+    const props = currentFeature.properties
 
-        new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            .setHTML('<h4>' + props['STORE_NAME'] + '</h4>' +
-                    '<p>' + props['STORE_TYPE'] + '</p>' +
-                    '<a href="http://' + props['WEB'] + '">' + props.WEB + '</a>')
-            .addTo(map)
+    new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML('<h4>' + props['STORE_NAME'] + '</h4>' +
+            '<p>' + props['STORE_TYPE'] + '</p>' +
+            '<a href="http://' + props['WEB'] + '">' + props.WEB + '</a>')
+        .addTo(map)
 
-        //const pop = new mapboxgl.Popup();
-        //pop.setLngLat(coordinates);
-        //pop.addTo(map);
+    //const pop = new mapboxgl.Popup();
+    //pop.setLngLat(coordinates);
+    //pop.addTo(map);
 
-        //const link = document.createElement('a')
-        //link.href = "http://" + currentFeature.properties['WEB']
-        //link.text = currentFeature.properties['WEB']
-        //pop.setHTML(link.outerHTML)
-    };
+    //const link = document.createElement('a')
+    //link.href = "http://" + currentFeature.properties['WEB']
+    //link.text = currentFeature.properties['WEB']
+    //pop.setHTML(link.outerHTML)
+};
 
 
 
@@ -210,14 +210,14 @@ const filterBox = document.getElementById('feature-filter');
 
 filterBox.addEventListener('keyup', function (event) {
     const typedValue = event.target.value.trim().toLowerCase();
-    console.log("Field is now: ", typedValue);
-    console.log("allFeatures: ", allFeatures);
-    const filtered = allFeatures.filter(function (feature) {
-        const storeName = feature.properties['DESCRIPTION'].trim().toLowerCase();
-        return storeName.indexOf(typedValue) >= 0
-    });
+    function searchBox(feature) {
+        const descri = feature.properties['DESCRIPTION'].trim().toLowerCase();
+        const storeName = feature.properties['STORE_NAME'].trim().toLowerCase();
+        return descri.indexOf(typedValue) >= 0 || storeName.indexOf(typedValue) >= 0;
+    }
 
-    console.log("Filtered: ", filtered);
+    const filtered = allFeatures.filter(searchBox);
+
     buildLocationList(filtered);
 });
 
@@ -243,7 +243,7 @@ function createPopUp(currentFeature) {
     var popup = new mapboxgl.Popup({ closeOnClick: true })
         .setLngLat(currentFeature.geometry.coordinates)
         .setHTML('<h4>' + currentFeature.properties['STORE_NAME'] + '</h4>' +
-            '<p>' + currentFeature.properties['STORE_TYPE'] + '<p>' + 
+            '<p>' + currentFeature.properties['STORE_TYPE'] + '<p>' +
             '<a href="http://' + currentFeature.properties['WEB'] + '">' + currentFeature.properties.WEB + '</a>')
         .addTo(map);
 }

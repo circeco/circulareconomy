@@ -12,7 +12,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
     center: [18.072, 59.325],
-    zoom: 13
+    zoom: 10
 });
 
 
@@ -121,7 +121,7 @@ function popUp(e) {
         new mapboxgl.Popup()
             .setLngLat(coordinates)
             .setHTML('<h4>' + props['STORE_NAME'] + '</h4>' +
-                    '<h6>' + props['STORE_TYPE'] + '</h6>' +
+                    '<p>' + props['STORE_TYPE'] + '</p>' +
                     '<a href="http://' + props['WEB'] + '">' + props.WEB + '</a>')
             .addTo(map)
 
@@ -197,7 +197,7 @@ function buildLocationList(features) {          // Build listing
         details.innerHTML = prop['ADDRESS_LINE1'];
 
         /* Add details to the individual listing. */
-        var details = listing.appendChild(document.createElement('div'));
+        var details = listing.appendChild(document.createElement('p'));
         details.innerHTML = prop['DESCRIPTION'];
 
         listing.addEventListener('click', function () {
@@ -233,7 +233,7 @@ filterBox.addEventListener('keyup', function (event) {
 function flyToStore(currentFeature) {
     map.flyTo({
         center: currentFeature.geometry.coordinates,
-        zoom: 13
+        zoom: 14
     });
 }
 
@@ -245,9 +245,8 @@ function createPopUp(currentFeature) {
     if (popUps[0]) popUps[0].remove();
     var popup = new mapboxgl.Popup({ closeOnClick: true })
         .setLngLat(currentFeature.geometry.coordinates)
-        .setHTML('<h5>' + currentFeature.properties['STORE_NAME'] + '</h5>' +
-            '<h6>' + currentFeature.properties['ADDRESS_LINE1'] + '</h6>' +
-            '<p>' + currentFeature.properties['DESCRIPTION'] + '<p>' + 
+        .setHTML('<h4>' + currentFeature.properties['STORE_NAME'] + '</h4>' +
+            '<p>' + currentFeature.properties['STORE_TYPE'] + '<p>' + 
             '<a href="http://' + currentFeature.properties['WEB'] + '">' + currentFeature.properties.WEB + '</a>')
         .addTo(map);
 }

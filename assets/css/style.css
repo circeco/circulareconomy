@@ -255,6 +255,7 @@ p {
 @media screen and (min-width: 450px){
     #maplist {width: 20%}
     #sidebar {width: 98% !important}
+    #circular_atlas {padding-top: 5% !important}
 }
 
 @media screen and (max-width: 900px){
@@ -442,11 +443,28 @@ p {
 
 .atlas a {
     color: black;
+    font-family: 'Khand', sans-serif;
+    font-size: 12px; 
 }
 
 .atlas a:hover {
   color: #FF5252;
   text-decoration: none;
+}
+
+.atlas h4 {
+    font-size: 18px !important;
+    text-decoration: underline #FF5252; 
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.atlas p {
+    text-align: left;
+    font-family: 'Chathura', sans-serif;
+    line-height: 0.5;
+    font-size: 22px;
+
 }
 
 .stockholmlist {
@@ -502,9 +520,8 @@ input {
   line-height: 1.2;
   padding: 2%;
   width: 120px;
+  box-shadow: none;
 }
-
-
 
 .mapboxgl-popup-content-wrapper {
   padding: 1%;
@@ -524,12 +541,14 @@ input {
 }
  
 #selectlayers a {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 600;
     color: #0c343dff;
     display: block;
     margin: 0;
     padding: 10px;
     text-decoration: none;
+    text-transform: uppercase;
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     text-align: center;
 }

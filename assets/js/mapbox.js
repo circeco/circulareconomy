@@ -121,7 +121,7 @@ function popUp(e) {
         new mapboxgl.Popup()
             .setLngLat(coordinates)
             .setHTML('<h4>' + props['STORE_NAME'] + '</h4>' +
-                    '<h6>' + props['ADDRESS_LINE1'] + '</h6>' +
+                    '<h6>' + props['STORE_TYPE'] + '</h6>' +
                     '<a href="http://' + props['WEB'] + '">' + props.WEB + '</a>')
             .addTo(map)
 
@@ -149,12 +149,12 @@ map.on('idle', function () {
     map.on('click', 'reuse', popUp)
 
     // Change the cursor to a pointer when the mouse is over the places layer.
-    map.on('mouseenter','shops', function () {
+    map.on('mouseenter', 'reuse', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
 
     // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'shops', function () {
+    map.on('mouseleave', 'reuse', function () {
         map.getCanvas().style.cursor = '';
     });
 
@@ -171,7 +171,7 @@ function buildLocationList(features) {          // Build listing
     features.forEach(function (feature, i) {
 
         /**
-         * Create a shortcut for `shop.properties`,
+         * Create a shortcut for `layer.properties`,
          * which will be used several times below.
          **/
         var prop = feature.properties;
@@ -193,12 +193,12 @@ function buildLocationList(features) {          // Build listing
 
 
         /* Add details to the individual listing. */
-        var details = listing.appendChild(document.createElement('div'));
+        var details = listing.appendChild(document.createElement('h6'));
         details.innerHTML = prop['ADDRESS_LINE1'];
 
         /* Add details to the individual listing. */
         var details = listing.appendChild(document.createElement('div'));
-        details.innerHTML = prop['STORE_TYPE'];
+        details.innerHTML = prop['DESCRIPTION'];
 
         listing.addEventListener('click', function () {
             flyToStore(feature);
@@ -208,6 +208,7 @@ function buildLocationList(features) {          // Build listing
 }
 
 
+// Search box that filter the results to display in the listing 
 const filterBox = document.getElementById('feature-filter');
 
 filterBox.addEventListener('keyup', function (event) {
@@ -215,7 +216,7 @@ filterBox.addEventListener('keyup', function (event) {
     console.log("Field is now: ", typedValue);
     console.log("allFeatures: ", allFeatures);
     const filtered = allFeatures.filter(function (feature) {
-        const storeName = feature.properties['STORE_NAME'].trim().toLowerCase();
+        const storeName = feature.properties['DESCRIPTION'].trim().toLowerCase();
         return storeName.indexOf(typedValue) >= 0
     });
 

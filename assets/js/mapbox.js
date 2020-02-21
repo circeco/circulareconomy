@@ -233,7 +233,7 @@ filterBox.addEventListener('keyup', function (event) {
 function flyToStore(currentFeature) {
     map.flyTo({
         center: currentFeature.geometry.coordinates,
-        zoom: 15
+        zoom: 13
     });
 }
 
@@ -246,7 +246,7 @@ function createPopUp(currentFeature) {
     var popup = new mapboxgl.Popup({ closeOnClick: true })
         .setLngLat(currentFeature.geometry.coordinates)
         .setHTML('<h5>' + currentFeature.properties['STORE_NAME'] + '</h5>' +
-            '<h4>' + currentFeature.properties['ADDRESS_LINE1'] + '</h4>' +
+            '<h6>' + currentFeature.properties['ADDRESS_LINE1'] + '</h6>' +
             '<p>' + currentFeature.properties['DESCRIPTION'] + '<p>' + 
             '<a href="http://' + currentFeature.properties['WEB'] + '">' + currentFeature.properties.WEB + '</a>')
         .addTo(map);

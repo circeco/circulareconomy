@@ -441,7 +441,7 @@ p {
 }
 
 .atlas a {
-  color: #FF5252;
+    color: black;
 }
 
 .atlas a:hover {
@@ -450,7 +450,7 @@ p {
 }
 
 .stockholmlist {
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: underline #FF5252; 
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;
@@ -503,6 +503,8 @@ input {
   padding: 2%;
   width: 120px;
 }
+
+
 
 .mapboxgl-popup-content-wrapper {
   padding: 1%;

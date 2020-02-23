@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazZhcW9mdm0wN3ZsM29wOXF6bXRwaDhxIn0.iz4i_eSrghnGX02vj7ATDg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazZ5NGg3dHcwbmw3M3FqenQ0NzM0ajcyIn0.SUuNioHT8bj5B0MpyzIKfg';
 
 // Define Constants 
 
@@ -61,7 +61,7 @@ map.on('load', function () {        // Load the tilequery
         id: 'apparel',
         type: 'circle',
         source: 'apparel',
-        'source-layer': 'food_stores',
+        'source-layer': 'apparel',
         paint: {
             "circle-stroke-color": "white",
             "circle-stroke-width": {

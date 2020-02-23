@@ -5,6 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazZ5NGg3dHcwbmw3M3FqenQ0N
 const stockholm = [18.072, 59.325];
 const denver = [-105.0178157, 39.737925];
 const home = denver;
+const myLayers = ['apparel', 'reuse']; 
 
 // Add the map to the page
 
@@ -135,27 +136,27 @@ function popUp(e) {
 
 
 map.on('idle', function () {
-    allFeatures = map.queryRenderedFeatures({ layers: ['apparel', 'reuse'] });
+    allFeatures = map.queryRenderedFeatures({ layers: myLayers });
     console.log("idle features: ", allFeatures);
     buildLocationList(allFeatures);
 
+
     // When a click event occurs on a feature in the places layer, open a popup at the
-    // location of the feature, with description HTML from its properties.
-    map.on('click', 'apparel', popUp)
+    // location of the feature, with description HTML from its properties. Done with the loop. 
 
-    map.on('click', 'reuse', popUp)
+    for (let aLayer of myLayers){
+        map.on ('click', aLayer, popUp); 
 
-    // Change the cursor to a pointer when the mouse is over the places layer.
-    map.on('mouseenter', 'apparel', function () {
-        map.getCanvas().style.cursor = 'pointer';
-    });
+        map.on ('mouseenter', aLayer, function (){
+           map.getCanvas().style.cursor = 'pointer'; 
+        });     // Change the cursor to a pointer when the mouse is over the places layer.
 
-    // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'apparel', function () {
+        map.on('mouseleave', aLayer, function () {
         map.getCanvas().style.cursor = '';
-    });
-
+        });     // Change it back to a pointer when it leaves.
+    }
 });
+
 
 const listings = document.getElementById('listings');
 

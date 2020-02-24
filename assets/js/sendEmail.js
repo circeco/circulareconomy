@@ -17,19 +17,19 @@ function sendMail(contactForm) {
 }
 
 $(function() {
-  $( "#button" ).click(function() {
-    $( "#button" ).addClass( "onclic", 250, validate);
+  $( "#send_button" ).click(function() {
+    $( "#send_button" ).addClass( "onclic", 250, validate);
   });
 
   function validate() {
     setTimeout(function() {
-      $( "#button" ).removeClass( "onclic" );
-      $( "#button" ).addClass( "validate", 450, callback );
+      $( "#send_button" ).removeClass( "onclic" );
+      $( "#send_button" ).addClass( "validate", 450, callback );
     }, 2250 );
   }
     function callback() {
       setTimeout(function() {
-        $( "#button" ).removeClass( "validate" );
+        $( "#send_button" ).removeClass( "validate" );
       }, 1250 );
     }
   });

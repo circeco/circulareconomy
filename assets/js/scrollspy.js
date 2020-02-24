@@ -6,7 +6,8 @@
   var i = 0;
 
   Array.prototype.forEach.call(section, function(e) {
-    sections[e.id] = e.offsetTop;
+      console.log(e.id)
+    sections[e.id] = e.offsetTop + 5;
   });
 
   window.onscroll = function() {

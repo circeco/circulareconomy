@@ -7,13 +7,19 @@ const denver = [-105.0178157, 39.737925];
 const home = denver;
 const myLayers = ['apparel', 'reuse']; 
 
+let bounds = [
+[15.072078, 58.247414], // Southwest coordinates
+[19.180375, 60.008548] // Northeast coordinates
+];
+
 // Add the map to the page
 
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/circeco/ck5zjodry0ujw1ioaiqvk9kjs',
     center: [18.072, 59.325],
-    zoom: 10
+    zoom: 10,
+    maxBounds: bounds   // Sets bounds as max
 });
 
 

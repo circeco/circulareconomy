@@ -144,12 +144,12 @@
                     <input type="hidden" name="contact_number">
                     <input type="text" name="name" id="name" class="form-control" placeholder="Name" required />
                     <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email Address" required />
-                    <textarea rows="5" name="projectsummary" id="message" class="form-control" placeholder="Message" required></textarea>
-                    <div class="form-row text-center">
-                        <div class="col">
-                            <button type="submit" id="send_button"></button>
-                        </div>
+                    <textarea rows="5" name="projectsummary" id="message" class="form-control" placeholder="Message" required></textarea>    
+                    <div class='send_button'>
+                        <button type="submit" id="send_button" onclick="buttonStuff()"></button>
                     </div>
+                        
+
                 </form>
                 <script src="assets/js/sendEmail.js"></script>
             </div>

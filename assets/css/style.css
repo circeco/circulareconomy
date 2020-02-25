@@ -589,35 +589,33 @@ input {
     border-radius: .25rem !important;
 }
 
-button {
+.send_button {
+    text-align: center;
+}
+
+.send_button button {
     outline:none;
     height: 40px;
-    text-align: center;
     width: 130px;
     border-radius:40px !important;
     background: #0c343dff;
     border: 2px solid white;
     color:white;
-    letter-spacing:1px;
     cursor: pointer;
     transition: all 0.25s ease;
 }
 
-button:hover {
+.send_button button:hover {
     color: #0c343dff;
     background: white;
 }
 
-button:active {
-    letter-spacing: 2px ;
-}
-
-button:after {
+.send_button button:after {
     content:"\f003";
     font-family:'FontAwesome';
 }
 
-.onclic {
+.send_button .onclic {
     width: 40px;
     border-color:#FF5252;
     border-width:3px;
@@ -626,21 +624,21 @@ button:after {
     animation: rotating 2s 0.25s linear infinite;
 }
 
-.onclic:after {
+.send_button .onclic:after {
     content:"";
 }
 
-.onclic:hover {
+.send_button .onclic:hover {
     color:white;
     background: #0c343dff;
 }
 
-.validate:after {
+.send_button .validate:after {
     font-family:'FontAwesome';
     content:"\f00c";
 }
 
-.validate {
+.send_button .validate {
     font-size:13px;
     color: white;
     background: #0c343dff;

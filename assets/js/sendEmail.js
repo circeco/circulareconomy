@@ -1,13 +1,18 @@
 
 function sendMail(contactForm) {
+    console.log("check")
     emailjs.send("circeco_web", "circeco", {
         "from_name": contactForm.name.value,
         "from_email": contactForm.emailaddress.value,
         "from_message": contactForm.message.value
+    
+    
+    
     })
         .then(
             function (response) {
-                console.log("SUCCESS", response.status, response.text).reset();
+                console.log("SUCCESS", response.status, response.text)
+                contactForm.reset();
             },
             function (error) {
                 console.log("FAILED", error);

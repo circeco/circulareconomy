@@ -581,11 +581,12 @@ input {
 }
 
 .form-control {
-    margin: 1% auto;
+    margin: 2% auto;
     max-width: 80%;
     font-size: 24px !important;
     font-family: 'Chathura', sans-serif;
     line-height: 0.7;
+    border-radius: .25rem !important;
 }
 
 button {
@@ -603,21 +604,22 @@ button {
 }
 
 button:hover {
-    color: white;
-    background: #0c343dff;
+    color: #0c343dff;
+    background: white;
 }
 
 button:active {
     letter-spacing: 2px ;
 }
 
-button:after {
-    content:"SUBMIT";
+button#send_button:after {
+    content:"\f003";
+    font-family:'FontAwesome';
 }
 
 .onclic {
     width: 40px;
-    border-color:white;
+    border-color:#FF5252;
     border-width:3px;
     font-size:0;
     border-left-color:#0c343dff;

@@ -640,8 +640,8 @@ input {
 
 .send_button .validate {
     font-size:13px;
-    color: white;
-    background: #0c343dff;
+    color: #0c343dff;
+    background: white;
 }
 
 @keyframes rotating {
@@ -652,8 +652,6 @@ input {
     transform: rotate(360deg);
   }
 }
-
-
 
 /* CSS efects */ 
 

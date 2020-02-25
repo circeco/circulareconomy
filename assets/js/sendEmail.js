@@ -17,17 +17,20 @@ function sendMail(contactForm) {
 }
 
 $(function() {
+    console.log('one')
   $( "#send_button" ).click(function() {
     $( "#send_button" ).addClass( "onclic", 250, validate);
   });
 
   function validate() {
+      console.log('two')
     setTimeout(function() {
       $( "#send_button" ).removeClass( "onclic" );
       $( "#send_button" ).addClass( "validate", 450, callback );
     }, 2250 );
   }
     function callback() {
+        console.log('three')
       setTimeout(function() {
         $( "#send_button" ).removeClass( "validate" );
       }, 1250 );

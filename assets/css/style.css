@@ -633,7 +633,7 @@ button:after {
     background: #0c343dff;
 }
 
-.onclic:after {
+.validate:after {
     font-family:'FontAwesome';
     content:"\f00c";
 }

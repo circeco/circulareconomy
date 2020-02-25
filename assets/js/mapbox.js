@@ -5,7 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazZ5NGg3dHcwbmw3M3FqenQ0N
 const stockholm = [18.072, 59.325];
 const denver = [-105.0178157, 39.737925];
 const home = denver;
-const myLayers = ['apparel', 'reuse']; 
+const myLayers = ['apparel', 'home']; 
 
 let bounds = [
 [15.072078, 58.247414], // Southwest coordinates
@@ -39,15 +39,15 @@ map.on('load', function () {        // Load the tilequery
         clusterRadius: 50   // Radius of each cluster when clustering points (defaults to 50)
     });
 
-    map.addSource('reuse', {      // Add map airport layer 
+    map.addSource('home', {      // Add map airport layer 
         type: 'vector',
-        url: 'mapbox://circeco.ck6tfz7pg09ir2llh3r0k51sw-5565x'
+        url: 'mapbox://circeco.ck6utkdky0iro2ls4ea12cku4-01tfk'
     });
 
     map.addLayer({              // define the style for display the data 
-        'id': 'reuse',
+        'id': 'home',
         'type': 'circle',
-        'source': 'reuse',
+        'source': 'home',
         'layout': {
             'visibility': 'visible'
         },
@@ -55,7 +55,7 @@ map.on('load', function () {        // Load the tilequery
             'circle-radius': 4,
             'circle-color': 'rgb(69, 129, 142)'
         },
-        'source-layer': 'reuse'
+        'source-layer': 'home'
     });
 
 
@@ -260,7 +260,7 @@ function createPopUp(currentFeature) {
 
 // Toggleable hide and show layers 
 
-var toggleableLayerIds = ['apparel', 'reuse'];
+var toggleableLayerIds = ['apparel', 'home'];
 
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];

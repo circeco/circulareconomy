@@ -612,7 +612,7 @@ button:active {
     letter-spacing: 2px ;
 }
 
-button#send_button:after {
+button:after {
     content:"\f003";
     font-family:'FontAwesome';
 }

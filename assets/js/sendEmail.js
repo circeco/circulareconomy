@@ -5,34 +5,39 @@ function sendMail(contactForm) {
         "from_email": contactForm.emailaddress.value,
         "from_message": contactForm.message.value
     })
-    .then(
-        function(response) {
-            console.log("SUCCESS", response.status, response.text);
-        },
-        function(error) {
-            console.log("FAILED", error);
-        }
-    );
+        .then(
+            function (response) {
+                console.log("SUCCESS", response.status, response.text);
+            },
+            function (error) {
+                console.log("FAILED", error);
+            }
+        );
     return false;  // To block from loading a new page
+    function clearForm() {
+        document.getElementById("contact-form").reset();
+    }
 }
 
-$(function() {
+$(function () {
     console.log('one')
-  $( "#send_button" ).click(function() {
-    $( "#send_button" ).addClass( "onclic", 250, validate);
-  });
+    $("#send_button").click(function () {
+        $("#send_button").addClass("onclic", 250, validate);
+    });
 
-  function validate() {
-      console.log('two')
-    setTimeout(function() {
-      $( "#send_button" ).removeClass( "onclic" );
-      $( "#send_button" ).addClass( "validate", 450, callback );
-    }, 2250 );
-  }
+    function validate() {
+        console.log('two')
+        setTimeout(function () {
+            $("#send_button").removeClass("onclic");
+            $("#send_button").addClass("validate", 450, callback);
+        }, 2250);
+    }
     function callback() {
         console.log('three')
-      setTimeout(function() {
-        $( "#send_button" ).removeClass( "validate" );
-      }, 1250 );
+        setTimeout(function () {
+            $("#send_button").removeClass("validate");
+        }, 1250);
     }
-  });
+
+});
+

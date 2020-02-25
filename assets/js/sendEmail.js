@@ -17,7 +17,7 @@ function sendMail(contactForm) {
     return false;  // To block from loading a new page
 }
 
-$(function buttonStuff() {
+$(function () {
     console.log('one')
     $("#send_button").click(function () {
         $("#send_button").addClass("onclic", 250, validate);
@@ -35,10 +35,7 @@ $(function buttonStuff() {
         setTimeout(function () {
             $("#send_button").removeClass("validate");
         }, 1250);
-        function clearForm() {
-            console.log('reset')
-            document.getElementById("contact-form").reset();
-        }
+
     }
 });
 

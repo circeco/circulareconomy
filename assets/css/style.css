@@ -577,7 +577,16 @@ input {
     background-color: #0c343dff;
     margin: 0;
     color: white;
-    padding: 5% 2% 10%;
+    padding: 10% 2% 5%;
+}
+
+#info-footer {
+    padding: 0 40px 20px;
+}
+
+#author {
+    font-size: 16px !important;
+    text-align: center !important;
 }
 
 .form-control {

@@ -1,167 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet'/>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
-    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'>
+	</script>
 
-    <title>Circeco</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-    <script type="text/javascript">
+	<link rel='stylesheet'
+		href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css'
+		type='text/css' />
+
+	<title>Circeco</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+	<script type="text/javascript">
 		(function(){
 	        emailjs.init("user_h8aOCHdQhXpblY9crGyiG");
 	    })();
 	</script>
 
-    
+
 </head>
 
 <body data-spy="scroll" data-target=".topnav" data-offset="50">
-    <header>
-        <div class="topnav" id="myTopnav">
-            <a class="active" href="#title_section" id="logo"></a>
-            <a href="#circular_action">Circular Action</a>
-            <a href="#circular_atlas">Circular Atlas</a>
-            <a href="#footer">Contact</a>
-            <a href="javascript:void(0);" id="icon" onclick="myFunction()">&#9776;</a>
-        </div>
-        <script src="assets/js/navbar.js"></script>
-    </header>
+	<header>
+		<div class="topnav" id="myTopnav">
+			<a class="active" href="#title_section" id="logo"></a>
+			<a href="#circular_action">Circular Action</a>
+			<a href="#circular_atlas">Circular Atlas</a>
+			<a href="#footer">Contact</a>
+			<a href="javascript:void(0);" id="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+		<script src="assets/js/navbar.js"></script>
+	</header>
 
-    <section>
-        
-        <div id="title_section" class="section scroll">
-            <div id="needed"></div>
-            <div>
-            <ul class="text hidden title" id="underline">
-                <li id="underline">CIRC</li>
-                <li class="ghost" id="underline">ULAR</li>
-                <li id="underline" class="ghost">|</li>
-                <li id="underline">ECO</li>
-                <li id="underline" class="ghost">NOMY</li>
-            </ul>
-            </div>
-        <div id="subtitle">inspiring circular solutions for responsible sustainable consumption</div>
-        </div>
-        
-        <script src="assets/js/title.js"></script>
-    </section>
+	<section>
 
-    <section  class="section scroll" id="circular_action">
-        <div class="row" id="red-wood">
-        </div>
-            <div class="rw-wrapper">
-                <h2 class="rw-sentence">
-                    <span>Circular Action</span>
-                    <div class="rw-words rw-words-1">
-                        <span>Refuse</span>
-                        <span>Rethink</span>
-                        <span>Reduce</span>
-                        <span>Reuse</span>
-                        <span>Repair</span>
-                        <span>Refurbish</span>
-                        <span>Reporpouse</span>
-                        <span>Recycle</span>
-                    </div>
-                </h2>
-            </div>
-        <p>reusing, reparing or sharing are examples of circular actions that help to build circular systems 
-        by SLOWING AND CLOSING LOOPS of materials and products minimasing resources input and waste</p>
+		<div id="title_section" class="section scroll">
+			<div id="needed"></div>
+			<div>
+				<ul class="text hidden title" id="underline">
+					<li id="underline">CIRC</li>
+					<li class="ghost" id="underline">ULAR</li>
+					<li id="underline" class="ghost">|</li>
+					<li id="underline">ECO</li>
+					<li id="underline" class="ghost">NOMY</li>
+				</ul>
+			</div>
+			<div id="subtitle">promoting circular solutions for an alternative consumption</div>
+		</div>
 
-        <div class="circactions">
-            <div class="card" id="refuse">
-                <h4>REFUSE - RETHINK</h4>                
-                <p> Make overconsumption unappealing and unnecessary, reduce redundancy by offering the same function with a radically innovative design
-                    Make product use more intensive with multifunctional products, rethinking ownership and long-lasting design </p> 
-            </div>
-            <div class="card" id="reduce">
-                <h4>REDUCE</h4>                
-                <p>Phase-out the use of non-renewable resources throughout the supply chain, while increasing efficiency in product manufacturing, distribution and use through reducing the use of new raw material and harmful emissions </p>            
-            </div>
-            <div class="card" id="reuse">
-                <h4>REUSE</h4>               
-                <p>Extend usage time by one or several users until the product or material reaches the end of its service life until its condition allow to fulfil the original function </p>
-            </div>
-            <div class="card" id="repair">
-                <h4>REPAIR - REFURBISH</h4>                
-                <p>Fornitura e installazione di vetri, cristalli, specchi su misura per interni o esterni, telai per finestre in alluminio, PVC o ferro, tapparelle, persiane, serrande e cancelli  di varie tipologie</p>
-            </div>
-            <div class="card" id="remanu">
-                <h4>REMANUFACTURE - REPURPOSE</h4>                
-                <p>Use materials from a discarded product for making new product that have the same function
-                    Use a product or its part for a new product with a different function </p>
-            </div>
-            <div class="card" id="recycle">
-                <h4>RECYCLE</h4>
-                <p>Process material from a discarded product that in part can be used to create a new product with a function that has a lower or same quality, also downcycling </p>
-            </div>
-        </div>
-    </section>
+		<script src="assets/js/title.js"></script>
+	</section>
 
-    <section class="section scroll" id="circular_atlas">
-        <h4>CIRCULAR ATLAS: Find circular solution in your area!</h4>
-        <div class="atlas">
-            <div id="maplist" class="overlay"> 
-            <span id="close_button" href="javascript:void(0)" class="closebtn" onclick="mapListBtn()"></span>
-                <div id='sidebar'>
-                    <fieldset>
-                        <input id="feature-filter" type="text" placeholder="Filter results by name"/>
+	<section class="section scroll" id="circular_action">
+		<div class="row" id="red-wood">
+		</div>
+		<div class="rw-wrapper">
+			<h2 class="rw-sentence">
+				<span>Circular Action</span>
+				<div class="rw-words rw-words-1">
+					<span>Refuse</span>
+					<span>Rethink</span>
+					<span>Reduce</span>
+					<span>Reuse</span>
+					<span>Repair</span>
+					<span>Refurbish</span>
+					<span>Reporpouse</span>
+					<span>Recycle</span>
+				</div>
+			</h2>
+		</div>
+		<p>reusing, reparing or sharing are examples of circular actions that help to build circular systems
+			by SLOWING AND CLOSING LOOPS of materials and products minimasing resources input and waste</p>
+
+		<div class="circactions">
+			<div class="card" id="refuse">
+				<h4>REFUSE - RETHINK</h4>
+				<p> Make overconsumption unappealing and unnecessary 
+                    <br>Reduce redundancy 
+					<br>Make product use more intensive with multifunctional products and long-lasting design
+					<br>Rethinking ownership towards sharing systems</p>
+			</div>
+			<div class="card" id="reduce">
+				<h4>REDUCE</h4>
+				<p>Phase-out waste, harmful emissions and the use of non-renewable resources throughout the supply chain, while increasing efficiency
+					in product manufacturing, distribution and use 
+			</div>
+			<div class="card" id="reuse">
+				<h4>REUSE</h4>
+				<p>Extend usage time by one or several users until the product or material reaches the end of its
+					service-life and its condition does not allow to fulfil the product or material original function </p>
+			</div>
+			<div class="card" id="repair">
+				<h4>REPAIR - REFURBISH</h4>
+				<p>Mantain product functionality for longer through reparing and refurbishing so that the product or material can be used in its original functionl</p>
+			</div>
+			<div class="card" id="remanu">
+				<h4>REMANUFACTURE - REPURPOSE</h4>
+				<p>Use materials from a discarded product for making new product that have the same function
+				    <br>Use a product or its part for a new product with a different function, also upcycling</p>
+			</div>
+			<div class="card" id="recycle">
+				<h4>RECYCLE</h4>
+				<p>Process material from a discarded product that in part can be used to create a new product with a
+					function that has a lower or same quality, also downcycling </p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section scroll" id="circular_atlas">
+		<h4>CIRCULAR ATLAS: Find circular solution in your area!</h4>
+		<div class="atlas">
+			<div id="maplist" class="overlay">
+				<span id="close_button" href="javascript:void(0)" class="closebtn" onclick="mapListBtn()"></span>
+				<div id='sidebar'>
+					<fieldset>
+						<input id="feature-filter" type="text" placeholder="Filter results by name"/>
                     </fieldset>
-                    <nav id="selectlayers"></nav>
-                    <div id='listings' class='listings'></div>
-                </div>
-            </div>
-            <span id="search_button" onclick="mapListBtn()"></span>
-            <div id='map' class='map'>
-            </div>
-        </div>
+						<nav id="selectlayers"></nav>
+						<div id='listings' class='listings'></div>
+				</div>
+			</div>
+			<span id="search_button" onclick="mapListBtn()"></span>
+			<div id='map' class='map'>
+			</div>
+		</div>
 
-        <script src="assets/js/mapbox.js"></script>
-        <script src="assets/js/overlay.js"></script>
-    </section>
+		<script src="assets/js/mapbox.js"></script>
+		<script src="assets/js/overlay.js"></script>
+	</section>
 
 
-    <footer class="section scroll" id="footer">
-        <div id="red-wood">
-        </div>
-        <div class="row" id="actual-footer">
-            <div class="col-12 col-sm-6 info-footer">
-                <h5>circeco.org</h5>
-                <p>Advertising the network of existing circular initiative that are offering solutions opposite to the take-make-disposal model</p>  
-                <p>Inspiring consumers action through offering valid sustainble circular alternative</p>
-                <p>Promoting circular business models and solutions that reduce impact of resource use and waste creation</p>
+	<footer class="section scroll" id="footer">
+		<div id="red-wood">
+		</div>
+		<div class="row" id="actual-footer">
+			<div id="info-footer" class="col-12 col-sm-6">
+				<h5>circeco.org</h5>
+				<p>Promoting a network of circular initiative that offer solutions alternative to the
+					take-make-disposal model
+				<br>Inspire consumers action proposing available circular initiative 
+				<br>Support circular business models and solutions that reduce impact of resource use and waste
+					creation</p>
 
-                <p id="author">@copyright 2020 circeco.org - realizzazione sito <a href="https://circeco.github.io/Piero_resume/" target=”_blank”>PieroGrilli</a></p>
-            </div>
-            <div class="col-12 col-sm-6">
-                <h5>Get in touch!</h5>
-                <form id="contact-form" onsubmit="return sendMail(this);">
-                    <input type="hidden" name="contact_number">
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="true" />
-                    <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email Address" required="true" />
-                    <textarea rows="5" name="projectsummary" id="message" class="form-control" placeholder="Message" required="true"></textarea>    
-                    <div class='send_button'>
-                        <button type="submit" id="send_button"></button>
-                    </div>
-                        
-
-                </form>
-                <script src="assets/js/sendEmail.js"></script>
-            </div>
-        </div>
-    </footer>
-    <script src="assets/js/scrollspy.js"></script>    
+				<p id="author">@copyright 2020 circeco.org - Made by <a
+						href="https://circeco.github.io/Piero_resume/" target=”_blank”>PieroGrilli</a></p>
+			</div>
+			<div class="col-12 col-sm-6">
+				<h5>Get in touch!</h5>
+				<form id="contact-form" onsubmit="return sendMail(this);">
+					<input type="hidden" name="contact_number">
+					<input type="text" name="name" id="name" class="form-control" placeholder="Name" required="true" />
+					<input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email Address" required="true" />
+					<textarea rows="5" name="projectsummary" id="message" class="form-control" placeholder="Message" required="true"></textarea>
+					<div class='send_button'>
+						<button type="submit" id="send_button"></button>
+					</div>
+				</form>
+				<script src="assets/js/sendEmail.js"></script>
+			</div>
+		</div>
+	</footer>
+	<script src="assets/js/scrollspy.js"></script>
 
 </body>
+
 </html>

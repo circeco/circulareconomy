@@ -22,10 +22,12 @@ function buttonCircle() {
     }
 }
 
+$("#contact-form input[required=true], #contact-form textarea[required=true]").buttonCircle()
+
 
 function sendMail(contactForm) {
     console.log("check")
-    buttonCircle()
+
 
 
     emailjs.send("circeco_web", "circeco", {

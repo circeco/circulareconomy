@@ -5,7 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazczN3docmowNjMwM2ZwZGFka
 const stockholm = [18.072, 59.325];
 const denver = [-105.0178157, 39.737925];
 const home = denver;
-const myLayers = ['apparel', 'home', 'cycling_and_sport', 'electronics_books_music']; 
+const myLayers = ['apparel', 'home', 'cycling-sports', 'electronics-books-music']; 
 
 let bounds = [
 [15.072078, 58.247414], // Southwest coordinates
@@ -41,7 +41,7 @@ map.on('load', function () {        // Load the tilequery
 
     map.addSource('home', {      // Add map airport layer 
         type: 'vector',
-        url: 'mapbox://circeco.ck6utkdky0iro2ls4ea12cku4-2yuyo'
+        url: 'mapbox://circeco.ck6utkdky0iro2ls4ea12cku4-9rs0u'
     });
 
     map.addLayer({              // define the style for display the data 
@@ -68,7 +68,7 @@ map.on('load', function () {        // Load the tilequery
 
     map.addSource('apparel', {        // Add map shop layer 
         type: 'vector',
-        url: 'mapbox://circeco.ck6tfz7pg09ir2llh3r0k51sw-0919f',
+        url: 'mapbox://circeco.ck6tfz7pg09ir2llh3r0k51sw-7yihy',
     });
 
     map.addLayer({                  // define the style for display the data 
@@ -92,16 +92,16 @@ map.on('load', function () {        // Load the tilequery
         },
     });
 
-    map.addSource('electronics_books_music', {        // Add map shop layer 
+    map.addSource('electronics-books-music', {        // Add map shop layer 
         type: 'vector',
-        url: 'mapbox://circeco.ck734j37i04g42kmu1h0oqvkd-55w7r',
+        url: 'mapbox://circeco.ck734j37i04g42kmu1h0oqvkd-7yswd',
     });
 
     map.addLayer({                  // define the style for display the data 
-        id: 'electronics_books_music',
+        id: 'electronics-books-music',
         type: 'circle',
-        source: 'electronics_books_music',
-        'source-layer': 'electronics_books_music',
+        source: 'electronics-books-music',
+        'source-layer': 'electronics-books-music',
         paint: {
             'circle-radius': 4,
             "circle-color": [
@@ -118,16 +118,17 @@ map.on('load', function () {        // Load the tilequery
         },
     });
 
-    map.addSource('cycling_and_sport', {        // Add map shop layer 
+    map.addSource('cycling-sports', {        // Add map shop layer 
         type: 'vector',
-        url: 'mapbox://circeco.ck7357fhw00cz2lphq8pl19l6-9yw65',
+        url: 'mapbox://circeco.ck7357fhw00cz2lphq8pl19l6-7kbhr',
     });
 
     map.addLayer({                  // define the style for display the data 
-        id: 'cycling_and_sport',
+        id: 'cycling-sports',
+        
         type: 'circle',
-        source: 'cycling_and_sport',
-        'source-layer': 'cycling_and_sport',
+        source: 'cycling-sports',
+        'source-layer': 'cycling-sports',
         paint: {
             'circle-radius': 4,
             "circle-color": [
@@ -305,7 +306,7 @@ function createPopUp(currentFeature) {
 
 // Toggleable hide and show layers 
 
-var toggleableLayerIds = ['apparel', 'home', 'cycling_and_sport', 'electronics_books_music'];
+var toggleableLayerIds = ['apparel', 'home', 'cycling-sports', 'electronics-books-music'];
 
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];

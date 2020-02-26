@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazZ5NGg3dHcwbmw3M3FqenQ0NzM0ajcyIn0.SUuNioHT8bj5B0MpyzIKfg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazczN3docmowNjMwM2ZwZGFkand4YTUxIn0.0pNRz0t74QkAc6y5shG0BA';
 
 // Define Constants 
 
@@ -41,7 +41,7 @@ map.on('load', function () {        // Load the tilequery
 
     map.addSource('home', {      // Add map airport layer 
         type: 'vector',
-        url: 'mapbox://circeco.ck6utkdky0iro2ls4ea12cku4-01tfk'
+        url: 'mapbox://circeco.ck6utkdky0iro2ls4ea12cku4-2yuyo'
     });
 
     map.addLayer({              // define the style for display the data 

@@ -581,12 +581,23 @@ input {
 }
 
 #info-footer {
-    padding: 0 40px 20px;
+    padding: 0 10% 20px;
+}
+
+#info-footer p {
+    line-height: 1.5;
+    padding-top: 20px;
 }
 
 #author {
-    font-size: 16px !important;
+    font-size: 18px !important;
     text-align: center !important;
+    padding-top: 20px;
+}
+
+#author a {
+    text-decoration: none;
+    color: #FF5252;
 }
 
 .form-control {

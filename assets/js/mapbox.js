@@ -5,7 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazczN3docmowNjMwM2ZwZGFka
 const stockholm = [18.072, 59.325];
 const denver = [-105.0178157, 39.737925];
 const home = denver;
-const myLayers = ['apparel', 'home']; 
+const myLayers = ['apparel', 'home', 'cycling_and_sport', 'electronics_books_music']; 
 
 let bounds = [
 [15.072078, 58.247414], // Southwest coordinates
@@ -76,6 +76,58 @@ map.on('load', function () {        // Load the tilequery
         type: 'circle',
         source: 'apparel',
         'source-layer': 'apparel',
+        paint: {
+            'circle-radius': 4,
+            "circle-color": [
+                'match',
+                ['get', 'STORE_TYPE'],
+                'reuse', '#FF5252',
+                'recycle', 'rgb(69, 129, 142)',
+                'refuse', '#FF8C00',
+                'rethink', '#9ACD32',
+                'remake', '#008000',
+                'repair', '#008000',
+                'rgb(69, 129, 142)' // any other type
+            ]
+        },
+    });
+
+    map.addSource('electronics_books_music', {        // Add map shop layer 
+        type: 'vector',
+        url: 'mapbox://circeco.ck734j37i04g42kmu1h0oqvkd-55w7r',
+    });
+
+    map.addLayer({                  // define the style for display the data 
+        id: 'electronics_books_music',
+        type: 'circle',
+        source: 'electronics_books_music',
+        'source-layer': 'electronics_books_music',
+        paint: {
+            'circle-radius': 4,
+            "circle-color": [
+                'match',
+                ['get', 'STORE_TYPE'],
+                'reuse', '#FF5252',
+                'recycle', 'rgb(69, 129, 142)',
+                'refuse', '#FF8C00',
+                'rethink', '#9ACD32',
+                'remake', '#008000',
+                'repair', '#008000',
+                'rgb(69, 129, 142)' // any other type
+            ]
+        },
+    });
+
+    map.addSource('cycling_and_sport', {        // Add map shop layer 
+        type: 'vector',
+        url: 'mapbox://circeco.ck7357fhw00cz2lphq8pl19l6-9yw65',
+    });
+
+    map.addLayer({                  // define the style for display the data 
+        id: 'cycling_and_sport',
+        type: 'circle',
+        source: 'cycling_and_sport',
+        'source-layer': 'cycling_and_sport',
         paint: {
             'circle-radius': 4,
             "circle-color": [
@@ -253,7 +305,7 @@ function createPopUp(currentFeature) {
 
 // Toggleable hide and show layers 
 
-var toggleableLayerIds = ['apparel', 'home'];
+var toggleableLayerIds = ['apparel', 'home', 'cycling_and_sport', 'electronics_books_music'];
 
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];

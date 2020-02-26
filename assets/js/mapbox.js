@@ -49,6 +49,9 @@ map.on('load', function () {        // Load the tilequery
         type: 'circle',
         source: 'home',
         'source-layer': 'home',
+        'layout': {
+            'visibility': 'visible'
+        },
         paint: {
             'circle-radius': 4,
             "circle-color": [
@@ -76,6 +79,9 @@ map.on('load', function () {        // Load the tilequery
         type: 'circle',
         source: 'apparel',
         'source-layer': 'apparel',
+        'layout': {
+            'visibility': 'visible'
+        },
         paint: {
             'circle-radius': 4,
             "circle-color": [
@@ -102,6 +108,9 @@ map.on('load', function () {        // Load the tilequery
         type: 'circle',
         source: 'electronics-books-music',
         'source-layer': 'electronics-books-music',
+        'layout': {
+            'visibility': 'visible'
+        },
         paint: {
             'circle-radius': 4,
             "circle-color": [
@@ -129,6 +138,9 @@ map.on('load', function () {        // Load the tilequery
         type: 'circle',
         source: 'cycling-sports',
         'source-layer': 'cycling-sports',
+        'layout': {
+            'visibility': 'visible'
+        },
         paint: {
             'circle-radius': 4,
             "circle-color": [

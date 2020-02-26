@@ -660,7 +660,7 @@ input {
 .text {
   position: absolute;
   top: 35%;
-  left: 49%;
+  left: 50%;
   transform: translateX(-50%) translateY(-50%);
   list-style: none;
   text-align: center;

@@ -45,17 +45,24 @@ map.on('load', function () {        // Load the tilequery
     });
 
     map.addLayer({              // define the style for display the data 
-        'id': 'home',
-        'type': 'circle',
-        'source': 'home',
-        'layout': {
-            'visibility': 'visible'
-        },
-        'paint': {
+        id: 'home',
+        type: 'circle',
+        source: 'home',
+        'source-layer': 'home',
+        paint: {
             'circle-radius': 4,
-            'circle-color': 'rgb(69, 129, 142)'
+            "circle-color": [
+                'match',
+                ['get', 'STORE_TYPE'],
+                'reuse', '#FF5252',
+                'recycle', 'rgb(69, 129, 142)',
+                'refuse', '#FF8C00',
+                'rethink', '#9ACD32',
+                'remake', '#008000',
+                'repair', '#008000',
+                'rgb(69, 129, 142)' // any other type
+            ]
         },
-        'source-layer': 'home'
     });
 
 
@@ -70,33 +77,19 @@ map.on('load', function () {        // Load the tilequery
         source: 'apparel',
         'source-layer': 'apparel',
         paint: {
-            "circle-stroke-color": "white",
-            "circle-stroke-width": {
-                stops: [
-                    [0, 0.1],
-                    [18, 3]
-                ],
-                base: 5
-            },
-            "circle-radius": {
-                stops: [
-                    [12, 7],
-                    [22, 180]
-                ],
-                base: 5
-            },
+            'circle-radius': 4,
             "circle-color": [
                 'match',
-                ['get', 'LABEL'],
+                ['get', 'STORE_TYPE'],
                 'reuse', '#FF5252',
-                'recycle', '#FF8C00',
+                'recycle', 'rgb(69, 129, 142)',
                 'refuse', '#FF8C00',
                 'rethink', '#9ACD32',
                 'remake', '#008000',
                 'repair', '#008000',
-                '#FF0000' // any other store type
+                'rgb(69, 129, 142)' // any other type
             ]
-        }
+        },
     });
 
 });

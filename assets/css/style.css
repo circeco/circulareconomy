@@ -308,7 +308,6 @@ p {
         z-index: 2;
         top: 0;
         left: 0;
-        background-color: white;
         overflow-x: hidden;
         transition: 0.5s;
     }

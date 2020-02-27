@@ -75,12 +75,7 @@ p {
     padding: 0;
 }
 
-/**----------------big title**/
-
-#needed {
-    position: relative;
-    height: 20px;
-}
+/**----------------title section**/
 
 #title_section {
     scroll-snap-align: start;
@@ -101,7 +96,7 @@ p {
 
 #subtitle {
     font-size: 40px;
-    margin: 440px auto 220px;
+    margin: 10px auto 220px;
     text-align: center;
     font-family: 'Chathura', sans-serif;
     line-height: 0.7;
@@ -117,6 +112,50 @@ p {
     overflow: hidden;
     margin: 0;
     background-attachment: fixed;
+}
+
+
+/*title css animation*/
+
+#title_div {
+    height: 500px;
+}
+
+.text {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    list-style: none;
+    text-align: center;
+    width: fit-content;
+}
+
+#underline {
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+}
+
+.text li {
+    display: inline-block;
+    float: left;
+    opacity: 1;
+    transition: all 0.8s ease-in-out;
+    max-width: 2em;
+}
+.text.hidden li.spaced {
+    adding-left: 0;
+}
+.text li.spaced {
+    padding-left: 0.5em;
+}
+
+.text.hidden li.ghost {
+    opacity: 0;
+    max-width: 0;
 }
 
 
@@ -696,48 +735,6 @@ input {
     transform: rotate(360deg);
   }
 }
-
-/* CSS efects */ 
-
-/*title */
-
-.text {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  list-style: none;
-  text-align: center;
-  width: fit-content;
-}
-
-#underline {
-    text-decoration-line: underline;
-    -webkit-text-decoration-color: #FF5252;
-    text-decoration-color: #FF5252;
-    -webkit-text-decoration-skip: ink;
-    text-decoration-skip: ink;
-}
-
-.text li {
-  display: inline-block;
-  float: left;
-  opacity: 1;
-  transition: all 0.8s ease-in-out;
-  max-width: 2em;
-}
-.text.hidden li.spaced {
-  padding-left: 0;
-}
-.text li.spaced {
-  padding-left: 0.5em;
-}
-
-.text.hidden li.ghost {
-  opacity: 0;
-  max-width: 0;
-}
-
 
 /* Circular Action animation */
 

@@ -52,7 +52,11 @@ h5 {
     font-size: 20px !important;
     text-align: center;
     margin: 3% !important;
-    text-decoration: underline #FF5252;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
 }
 
 p {
@@ -86,9 +90,13 @@ p {
     font-size: 90px;
     text-align: center;
     padding: 240px 0 3%;
-    text-decoration: underline #FF5252; 
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
 }
 
 #subtitle {
@@ -153,7 +161,11 @@ p {
 }
 
 .active {
-    text-decoration: underline #FF5252;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;    
     color: white;
 }
 
@@ -459,9 +471,13 @@ p {
 
 .atlas h4 {
     font-size: 18px !important;
-    text-decoration: underline #FF5252; 
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
 }
 
 .atlas p {
@@ -474,9 +490,13 @@ p {
 
 .stockholmlist {
     font-size: 18px;
-    text-decoration: underline #FF5252; 
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
 }
 
 .listings {
@@ -693,7 +713,11 @@ input {
 }
 
 #underline {
-  text-decoration: underline #FF5252 !important;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
 }
 
 .text li {

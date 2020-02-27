@@ -7,7 +7,7 @@
 
   Array.prototype.forEach.call(section, function(e) {
       console.log(e.id)
-    sections[e.id] = e.offsetTop + 5;
+    sections[e.id] = e.offsetTop;
   });
 
   window.onscroll = function() {

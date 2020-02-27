@@ -53,7 +53,7 @@ map.on('load', function () {        // Load the tilequery
             'visibility': 'visible'
         },
         paint: {
-            'circle-radius': 4,
+            'circle-radius': 5,
             "circle-color": [
                 'match',
                 ['get', 'STORE_TYPE'],
@@ -83,7 +83,7 @@ map.on('load', function () {        // Load the tilequery
             'visibility': 'visible'
         },
         paint: {
-            'circle-radius': 4,
+            'circle-radius': 5,
             "circle-color": [
                 'match',
                 ['get', 'STORE_TYPE'],
@@ -112,7 +112,7 @@ map.on('load', function () {        // Load the tilequery
             'visibility': 'visible'
         },
         paint: {
-            'circle-radius': 4,
+            'circle-radius': 5,
             "circle-color": [
                 'match',
                 ['get', 'STORE_TYPE'],
@@ -142,7 +142,7 @@ map.on('load', function () {        // Load the tilequery
             'visibility': 'visible'
         },
         paint: {
-            'circle-radius': 4,
+            'circle-radius': 5,
             "circle-color": [
                 'match',
                 ['get', 'STORE_TYPE'],

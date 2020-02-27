@@ -30,6 +30,8 @@ h2 {
     text-align: center;
     padding-top: 10% !important; 
     text-decoration: underline #FF5252;
+    -webkit-text-decoration-color: #FF5252;
+
 }
 
 h3 {
@@ -284,6 +286,7 @@ p {
     .atlas {display:block !important; padding-top: 2% !important}
     #sidebar {width: 100% !important; margin: 30% auto 0!important}
     #map {scroll-snap-align: end; width: 100% !important}
+    .mapboxgl-ctrl-group {visibility: hidden;}
     .overlay {
         height: 100%;
         width: 0;

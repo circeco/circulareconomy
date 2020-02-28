@@ -13,12 +13,22 @@ The main title also uses an animation but from JavaScript in orther to understan
 Finally, although the map section has to rely on external resources, It was adapted to fit the website same rules for style, accessibility and amusement so continuity is assurance. 
 
 ### Map functionality
-[map tour](https://github.com/circeco/circulareconomy/assets/img/demo/map-tour.gif)
-
+![map tour](https://github.com/circeco/circulareconomy/assets/img/demo/map-tour.gif)
+The main functionality of the website is the circular atlas. It is map with layers of points that indicates circular initiative in the Stockholm area. By clicking on the points on the map a box appear with info about the initiative and their website. The list next to map have several features: 
+1 - the list is adjusted based on the points viewed on the map 
+2 - the user can select a place in the list by click and the map will zoom to the place and open a pop-up box with info about the place
+3 - points on the map are divided by type of initiative (home, apperal, cycling-sport, electronics-books-music) and can be selected or unselected for be displayed on the map
+4 - there is a searh box where the user can type more specificly what to look for and items on the list appper or not if match the search
+5 - the selcting of a layer-type, the zoom-panning and display accordingly and the search box work together 
 
 ## Technologies 
+HTML
+CSS 
+JAVASCRIPT
 
 ### Development including references and aknowledgement 
+
+
 
 ### Compatability/Limitations/Issues 
 

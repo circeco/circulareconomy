@@ -2,7 +2,7 @@
 
 ![circulareconomy](https://circeco.github.io/circulareconomy/assets/img/demo/home_page.jpg)
 
-### A platform about circular econony and mapping circular initiative in the Stockholm area
+### A platform about circular econony and for mapping circular initiative in the Stockholm area
 Circeco aim to highlight and promote the network of existing circular initiative in the Stockholm area by mappiing and organising those by sector. The website also wants to inform about what kind of circular action the user can take in order to have a sustaianble alternative to the common consumption model take-make-dispose. 
 
 ## UX
@@ -12,7 +12,8 @@ The css hover animation for the circular action cards clarify the terminology us
 The main title also uses an animation but from JavaScript in orther to understand the meaning of the acronym circeco again without clattering with too much writing but instead with an amusing animation. There are also two Javascript files that help the user to better navigate throughout the page a part from the navigation bar. One is the scrollspy, which allow the see on the navigation bar sticky to the top in which section of the website the user is. The second JavaScript code helps the user to scroll and snap to a section of the website. This is particularly useful for the map section so that the user can focus on interacting with the map without basically having the page moving too much. 
 Finally, although the map section has to rely on external resources, It was adapted to fit the website same rules for style, accessibility and amusement so continuity is assurance. 
 
-### Discoveries/Functionality/Quick Tour
+### Map functionality
+![](name-of-giphy.gif)
 
 
 ## Technologies 

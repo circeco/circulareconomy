@@ -13,7 +13,7 @@ The main title also uses an animation but from JavaScript in orther to understan
 Finally, although the map section has to rely on external resources, It was adapted to fit the website same rules for style, accessibility and amusement so continuity is assurance. 
 
 ### Map functionality
-![map tour](https://github.com/circeco/circulareconomy/blob/master/assets/img/demo/map-tour.gif)
+[map tour](https://github.com/circeco/circulareconomy/assets/img/demo/map-tour.gif)
 
 
 ## Technologies 

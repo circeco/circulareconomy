@@ -1,8 +1,7 @@
-# CIRCECO (live site here or)
+## [CIRCECO.org](https://circeco.github.io/circulareconomy/)
 
-## A platform about circular econony and mapping circular initiative in the Stockholm area
+### A platform about circular econony and mapping circular initiative in the Stockholm area
 
-### image of the home page (or live site here) 
 ![circulareconomy](https://circeco.github.io/circulareconomy/assets/img/demo/home_page.jpg)
 
 ## About/Purpose/Design concept 

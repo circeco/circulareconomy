@@ -19,6 +19,8 @@ Finally, although the map section has to rely on external resources, It was adap
 
 The main functionality of the website is the circular atlas. It is map with layers of points that indicates circular initiative in the Stockholm area. By clicking on the points on the map a box appear with info about the initiative and their website. The list next to map have several features: 
 
+![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-search-box.gif)
+
 1 - the list is adjusted based on the points viewed on the map 
 
 2 - the user can select a place in the list by click and the map will zoom to the place and open a pop-up box with info about the place
@@ -29,6 +31,7 @@ The main functionality of the website is the circular atlas. It is map with laye
 
 5 - the selcting of a layer-type, the zoom-panning and display accordingly and the search box work together 
 
+![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-click-on-point.gif)
 
 ## Technologies 
 

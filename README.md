@@ -1,4 +1,5 @@
 ## [CIRCECO.org](https://circeco.github.io/circulareconomy/)
+### NOTE: This webste is not running on Internet Explorer!  
 
 ![circulareconomy](https://circeco.github.io/circulareconomy/assets/img/demo/home_page.jpg)
 
@@ -42,6 +43,8 @@ JAVASCRIPT
 
 
 ### Compatability/Limitations/Issues 
+
+
 
 ### Further development
 

@@ -118,12 +118,12 @@ p {
 /*title css animation*/
 
 #title_div {
-    height: 500px;
+    height: 400px;
 }
 
 .text {
     position: absolute;
-    bottom: 0%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     list-style: none;

@@ -659,6 +659,11 @@ input {
 
 #author a {
     text-decoration: none;
+    color: white;
+}
+
+#author a:hover {
+    text-decoration: none;
     color: #FF5252;
 }
 

@@ -22,15 +22,15 @@ The main functionality of the website is the circular atlas. It is a map with la
 
 2 - the user can select a place in the list by click and the map will zoom to the place and open a pop-up box with info about the place
 
-![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-click-on-point.gif)
+![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-click.gif)
 
 3 - points on the map are divided by type of initiative (home, apparel, cycling-sport, electronics-books-music) and can be selected or unselected for be displayed on the map 
 
-![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-list-adjusted.gif)
+![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-list.gif)
 
 4 - there is a search box where the user can type more specifically what to look for and items on the list appear or not if match the search
 
-![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-search-box.gif)
+![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-search.gif)
 
 5 - the selecting of a layer-type, the zoom-panning and display accordingly and the search box work together 
 

@@ -81,10 +81,13 @@ p {
     scroll-snap-align: start;
 }
 
+#title_div {
+    height: 400px;
+}
+
 .title {
     font-size: 90px;
     text-align: center;
-    padding: 240px 0 3%;
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;
     text-decoration-line: underline;
@@ -117,13 +120,9 @@ p {
 
 /*title css animation*/
 
-#title_div {
-    height: 400px;
-}
-
 .text {
     position: absolute;
-    bottom: 10%;
+    top: 360px;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     list-style: none;
@@ -315,7 +314,7 @@ p {
 
 @media screen and (max-width: 900px){
     .title {font-size: 50px; padding: 0px}
-    #subtitle, p {font-size: 30px; margin:380px auto 400px}
+    #subtitle, p {font-size: 30px}
     .topnav a {font-size: 24px !important}
     #red-wood {height: 220px}
     .rw-wrapper h2, span {font-size: 30px !important}
@@ -329,7 +328,7 @@ p {
 
 @media screen and (max-width: 450px){
     .title {font-size: 40px; padding: 0px}
-    #subtitle, p {font-size: 30px; margin:300px 2% 300px}
+    #subtitle, p {font-size: 30px}
     #red-wood {height: 180px}
     #reuse, #refuse, #reduce, #repair, #remanu, #recycle {height: 120px; width: 90%}
     .circactions h4 {top: 20% !important}

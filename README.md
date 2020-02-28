@@ -15,7 +15,6 @@ The main title also uses an animation but from JavaScript in orther to understan
 Finally, although the map section has to rely on external resources, It was adapted to fit the website same rules for style, accessibility and amusement so continuity is assurance. 
 
 ### Map functionality
-![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-list-adjusted.gif)
 
 The main functionality of the website is the circular atlas. It is map with layers of points that indicates circular initiative in the Stockholm area. By clicking on the points on the map a box appear with info about the initiative and their website. The list next to map have several features: 
 
@@ -23,9 +22,15 @@ The main functionality of the website is the circular atlas. It is map with laye
 
 2 - the user can select a place in the list by click and the map will zoom to the place and open a pop-up box with info about the place
 
-3 - points on the map are divided by type of initiative (home, apperal, cycling-sport, electronics-books-music) and can be selected or unselected for be displayed on the map
+![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-click-on-point.gif)
+
+3 - points on the map are divided by type of initiative (home, apperal, cycling-sport, electronics-books-music) and can be selected or unselected for be displayed on the map 
+
+![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-list-adjusted.gif)
 
 4 - there is a searh box where the user can type more specificly what to look for and items on the list appper or not if match the search
+
+![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-search-box.gif)
 
 5 - the selcting of a layer-type, the zoom-panning and display accordingly and the search box work together 
 
@@ -40,17 +45,31 @@ JAVASCRIPT
 
 
 ### Development including references and aknowledgement 
+HTML and CSS code have been developed by me if otherwise there would be in-line reference. I have relyed on several tutorials from several sources on th web including blogs, but some website have been particularly helpful and of inspiration for building this website and increase my knowledge. 
 
+(https://www.w3schools.com/) 
+
+(https://css-tricks.com/)
+
+(https://codepen.io/)
+
+(https://stackoverflow.com/)
+
+Several elemnts and functionality in the website are implemented with combination of HTML, CSS and JAVASCRIPT codes and the references above where also useful for the making these. 
+
+Mapbox is been used for building the main functionality of circeco the map. It was possible to leverage on Mapbox existing library on order to build and combined map functionality. Moreover, Mapbox offers an extensive accessible API documentation and tutorials that allowed learning easily. There were also several insparing map example but It is obvious that circeco map is customised and with original features. Iterative process to write the map code 
 
 
 ### Compatability/Limitations/Issues 
-
+Bootstrap
 
 
 ### Further development
 
 
 ## Licence and Copyrights 
+Icons for contact are from (https://fontawesome.com)
+Font style is from (https://fonts.google.com)
 
 
 

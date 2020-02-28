@@ -45,17 +45,31 @@ JAVASCRIPT
 
 
 ### Development including references and aknowledgement 
+HTML and CSS code have been developed by me if otherwise there would be in-line reference. I have relyed on several tutorials from several sources on th web including blogs, but some website have been particularly helpful and of inspiration for building this website and increase my knowledge. 
 
+(https://www.w3schools.com/) 
+
+(https://css-tricks.com/)
+
+(https://codepen.io/)
+
+(https://stackoverflow.com/)
+
+Several elemnts and functionality in the website are implemented with combination of HTML, CSS and JAVASCRIPT codes and the references above where also useful for the making these. 
+
+Mapbox is been used for building the main functionality of circeco the map. It was possible to leverage on Mapbox existing library on order to build and combined map functionality. Moreover, Mapbox offers an extensive accessible API documentation and tutorials that allowed learning easily. There were also several insparing map example but It is obvious that circeco map is customised and with original features. Iterative process to write the map code 
 
 
 ### Compatability/Limitations/Issues 
-
+Bootstrap
 
 
 ### Further development
 
 
 ## Licence and Copyrights 
+Icons for contact are from (https://fontawesome.com)
+Font style is from (https://fonts.google.com)
 
 
 

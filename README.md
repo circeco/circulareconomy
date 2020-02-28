@@ -1,5 +1,7 @@
 ## [CIRCECO.org](https://circeco.github.io/circulareconomy/)
 
+NOTE: This webste is not running on Internet Explorer!  
+
 ![circulareconomy](https://circeco.github.io/circulareconomy/assets/img/demo/home_page.jpg)
 
 ### A platform about circular econony and for mapping circular initiative in the Stockholm area
@@ -13,7 +15,7 @@ The main title also uses an animation but from JavaScript in orther to understan
 Finally, although the map section has to rely on external resources, It was adapted to fit the website same rules for style, accessibility and amusement so continuity is assurance. 
 
 ### Map functionality
-![map tour](https://github.com/circeco/circulareconomy/assets/img/demo/map-tour-s.gif)
+![map tour](https://circeco.github.io/circulareconomy/assets/img/demo/map-tour.gif)
 
 The main functionality of the website is the circular atlas. It is map with layers of points that indicates circular initiative in the Stockholm area. By clicking on the points on the map a box appear with info about the initiative and their website. The list next to map have several features: 
 
@@ -42,6 +44,8 @@ JAVASCRIPT
 
 
 ### Compatability/Limitations/Issues 
+
+
 
 ### Further development
 

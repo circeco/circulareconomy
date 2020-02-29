@@ -1,11 +1,28 @@
 ## [CIRCECO.org](https://circeco.github.io/circulareconomy/)
 
-NOTE: This website is not running on Internet Explorer!  
+NOTE: The map feature on this website might not working if you are using Internet Explorer as browser!  
 
 ![circulareconomy](https://circeco.github.io/circulareconomy/assets/img/demo/home_page.jpg)
 
 ### A platform about circular economy and for mapping circular initiative in the Stockholm area
 Circeco aims to highlight and promote the network of existing circular initiative in the Stockholm area by mapping and organising those by sector. The website also wants to inform about what kind of circular action the user can take in order to have a sustainable alternative to the common consumption model take-make-dispose. 
+
+## Technologies 
+
+* HTML
+
+* CSS 
+
+* JAVASCRIPT
+
+## Libraries and Frameworks 
+
+* Bootstrap - Responsive, mobile-first components library 
+
+* JQuery Ajax - JavaScript library that simplifies HTML document event handling, traversing, animating and Ajax interactions 
+
+* Mapbox API - Tools and services to retrieve information about a created map account, to upload and to change resources, use Mapbox tools
+
 
 ## UX
 The design goal is to create a sleek, simple and straightforward user interface. The use of colors is kept at a minimum that apart from the use of black and white, with also the employment of a type of red to highlight and catch attention and a type of green/blue in a different shade to represent different levels of circularity. This is also a reminder of the logo and of the sustainability theme often associated with green. The red color is also a reminder of the state of environmental emergency and the action to take. The colors employed and the font together create a specific custom theme recognizable among another website. This same custom theme can be used for the further development of the website. 
@@ -35,16 +52,7 @@ The main functionality of the website is the circular atlas. It is a map with la
 5 - the selecting of a layer-type, the zoom-panning and display accordingly and the search box work together 
 
 
-## Technologies 
-
-HTML
-
-CSS 
-
-JAVASCRIPT
-
-
-### Development including references and acknowledgment 
+## Development including references and acknowledgment 
 HTML and CSS code have been developed by me if otherwise there would be an in-line reference. I have relied on several tutorials from several sources on the web including blogs, but some websites have been particularly helpful and of inspiration for building this website and increase my knowledge. 
 
 (https://www.w3schools.com/) 
@@ -62,6 +70,19 @@ Several elements and functionality in the website are implemented with a combina
 
 Mapbox is been used for building the main functionality of circeco the map. It was possible to leverage on Mapbox existing library in order to build and combined map functionality. Moreover, Mapbox offers extensive accessible API documentation and tutorials that allowed learning easily. There were also several inspiring map example but It is obvious that the circeco map is customized and with original features. Writing the JavaScript code for the map functionality is been an iterative process where layers of complexity where added one per time. Several examples in Mapbox show one level of complexity but it is custom made to combine several functionalities together for my case. 
 
+### Testing
+
+All functionality are behaving in a predictable way and there are no errors reported in the console. 
+
+The contact form is connected and I will receive a message to the email address indicated. 
+
+The map is diplaying the custumised map made with mapbox studio and is dislpay also all layers with data created. 
+
+This site was tested across multiple mobile devices (iPhone 4, 5, 7: Chrome and Safari, iPad, Samsung Galaxy) to ensure compatibility and responsiveness, and accross browsers (Chrome, Safari, Internet Explorer, FireFox). It is working on all browser except on Internet Explorer. This is because Mapbox Studio style editor and dataset editor are not compatible with Internet Explorer, but it can be accessed all other pages and features located from in the Mapbox Studio dashboard using Internet Explorer 10+. Also, Mapbox does not guarantee that Mapbox Studio will work with browsers that only support WebGL experimentally. 
+
+
+### Deployment 
+The website is hosted on GitHub pages, directly deployed from the master branch. Upon new commits to the master branchhe the website will update automatically. To run locally, cloning can be done to this repository directly into the chosen editor by pasting 'git clone https://circeco.github.io/circulareconomy/' into the terminal chosen. To cut ties with this GitHub repository, type 'git remote rm origin' into the terminal.
 
 ### Issues and limitation
 I found Bootstrap a limitation in several cases while building the website but at the moment would still be a dependency in use. 
@@ -76,4 +97,4 @@ More functionality would be added in the future. First, more pages with more inf
 The picture used on the website is from Pixabay and free to be used for commercial purpose, other styles and logos are custom made or in-line referenced. 
 Circeco.org holds the copyright for the business idea, content and codes in this repository. 
 
-
+Author **Piero Grilli** can be contacted at grilli.piero@circeco.org

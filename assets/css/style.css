@@ -90,7 +90,7 @@ p {
     text-align: center;
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
     text-decoration-line: underline;
     -webkit-text-decoration-color: #FF5252;
@@ -133,6 +133,7 @@ p {
 }
 
 #underline {
+    margin: 0;
     text-decoration-line: underline;
     -webkit-text-decoration-color: #FF5252;
     text-decoration-color: #FF5252;
@@ -141,7 +142,6 @@ p {
 }
 
 .text li {
-    
     float: left;
     opacity: 1;
     transition: all 0.8s ease-in-out;

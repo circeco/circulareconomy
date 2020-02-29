@@ -141,15 +141,13 @@ p {
 }
 
 .text li {
-    display: inline-block;
+    
     float: left;
     opacity: 1;
     transition: all 0.8s ease-in-out;
     max-width: 2em;
 }
-.text.hidden li.spaced {
-    adding-left: 0;
-}
+
 .text li.spaced {
     padding-left: 0.5em;
 }

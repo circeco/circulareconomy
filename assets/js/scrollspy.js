@@ -1,4 +1,4 @@
-// As the user scrolls the website 
+// As the user scrolls the website a listener update the navigation bar 
 /* https://codepen.io/zchee/pen/ogzvZZ */
 
 (function() {

@@ -5,7 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazczN3docmowNjMwM2ZwZGFka
 // Define Constants 
 
 const stockholm = [18.072, 59.325];
-const home = denver;
+const home = stockholm;
 const myLayers = ['apparel', 'home', 'cycling-sports', 'electronics-books-music']; 
 
 let bounds = [
@@ -181,7 +181,7 @@ function popUp(e) {
         .setLngLat(coordinates)
         .setHTML('<h4>' + props['STORE_NAME'] + '</h4>' +
             '<p>' + props['STORE_TYPE'] + '</p>' +
-            '<a href="http://' + props['WEB'] + '">' + props.WEB + '</a>')
+            '<a target=”_blank” href="http://' + props['WEB'] + '">' + props.WEB + '</a>')
         .addTo(map)
 };
 
@@ -290,7 +290,7 @@ function createPopUp(currentFeature) {
         .setLngLat(currentFeature.geometry.coordinates)
         .setHTML('<h4>' + currentFeature.properties['STORE_NAME'] + '</h4>' +
             '<p>' + currentFeature.properties['STORE_TYPE'] + '<p>' +
-            '<a href="http://' + currentFeature.properties['WEB'] + '">' + currentFeature.properties.WEB + '</a>')
+            '<a target=”_blank” href="http://' + currentFeature.properties['WEB'] + '">' + currentFeature.properties.WEB + '</a>')
         .addTo(map);
 }
 

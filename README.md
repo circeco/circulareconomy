@@ -9,19 +9,19 @@ Circeco aims to highlight and promote the network of existing circular initiativ
 
 ## Technologies 
 
-HTML
+*HTML
 
-CSS 
+*CSS 
 
-JAVASCRIPT
+*JAVASCRIPT
 
 ## Libraries and Frameworks 
 
-Bootstrap - Responsive, mobile-first components library 
+*Bootstrap - Responsive, mobile-first components library 
 
-JQuery Ajax - JavaScript library that simplifies HTML document event handling, traversing, animating and Ajax interactions 
+*JQuery Ajax - JavaScript library that simplifies HTML document event handling, traversing, animating and Ajax interactions 
 
-Mapbox API - Tools and services to retrieve information about a created map account, to upload and to change resources, use Mapbox tools
+*Mapbox API - Tools and services to retrieve information about a created map account, to upload and to change resources, use Mapbox tools
 
 
 ## UX
@@ -97,4 +97,4 @@ More functionality would be added in the future. First, more pages with more inf
 The picture used on the website is from Pixabay and free to be used for commercial purpose, other styles and logos are custom made or in-line referenced. 
 Circeco.org holds the copyright for the business idea, content and codes in this repository. 
 
-Author Piero Grilli can be contacted at grilli.piero@circeco.org
+Author **Piero Grilli** can be contacted at grilli.piero@circeco.org

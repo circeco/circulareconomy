@@ -1,6 +1,6 @@
 ## [CIRCECO.org](https://circeco.github.io/circulareconomy/)
 
-NOTE: This website is not running on Internet Explorer!  
+NOTE: The map feature on this website might not working if you are using Internet Explorer as browser!  
 
 ![circulareconomy](https://circeco.github.io/circulareconomy/assets/img/demo/home_page.jpg)
 
@@ -78,7 +78,7 @@ The contact form is connected and I will receive a message to the email address 
 
 The map is diplaying the custumised map made with mapbox studio and is dislpay also all layers with data created. 
 
-This site was tested across multiple mobile devices (iPhone 4, 5, 7: Chrome and Safari, iPad, Samsung Galaxy) to ensure compatibility and responsiveness, and accross browsers (Chrome, Safari, Internet Explorer, FireFox). It is working on all browser except on Internet Explorer. 
+This site was tested across multiple mobile devices (iPhone 4, 5, 7: Chrome and Safari, iPad, Samsung Galaxy) to ensure compatibility and responsiveness, and accross browsers (Chrome, Safari, Internet Explorer, FireFox). It is working on all browser except on Internet Explorer. This is because Mapbox Studio style editor and dataset editor are not compatible with Internet Explorer, but it can be accessed all other pages and features located from in the Mapbox Studio dashboard using Internet Explorer 10+. Also, Mapbox does not guarantee that Mapbox Studio will work with browsers that only support WebGL experimentally. 
 
 
 ### Deployment 

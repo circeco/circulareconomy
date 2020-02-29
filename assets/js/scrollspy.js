@@ -9,7 +9,7 @@
   var i = 0;
 
   Array.prototype.forEach.call(section, function(e) {
-      console.log(e.id)
+      console.log(e.id);
     sections[e.id] = e.offsetTop;
   });
 

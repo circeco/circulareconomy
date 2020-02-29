@@ -9,14 +9,14 @@ function sendMail(contactForm) {
     })
         .then(
             function (response) {
-                console.log("SUCCESS", response.status, response.text)
+                console.log("SUCCESS", response.status, response.text);
                 contactForm.reset(); // To clear the form after sending message 
 
             },
             function (error) {
                 console.log("FAILED", error);
             }
-        )
+        );
 
     return false;  // To block from loading a new page
 }
@@ -43,7 +43,7 @@ function buttonCircle() {
     }
 }
 
-buttonCircle()
+buttonCircle();
 
 
 

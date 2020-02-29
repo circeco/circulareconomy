@@ -7,4 +7,4 @@ function myFunction() {
     } else {
         x.className = "topnav";
     }
-};
+}

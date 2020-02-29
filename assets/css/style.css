@@ -90,6 +90,8 @@ p {
     text-align: center;
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;
+    margin: 0;
+    padding: 0;
     text-decoration-line: underline;
     -webkit-text-decoration-color: #FF5252;
     text-decoration-color: #FF5252;

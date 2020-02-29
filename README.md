@@ -97,4 +97,4 @@ More functionality would be added in the future. First, more pages with more inf
 The picture used on the website is from Pixabay and free to be used for commercial purpose, other styles and logos are custom made or in-line referenced. 
 Circeco.org holds the copyright for the business idea, content and codes in this repository. 
 
-
+Author Piero Grilli can be contacted at grilli.piero@circeco.org

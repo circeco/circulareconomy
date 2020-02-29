@@ -1,3 +1,4 @@
+// Make the scrolling to snap on specific point of the website 
 
 const gra = function (min, max) {
     return Math.random() * (max - min) + min;

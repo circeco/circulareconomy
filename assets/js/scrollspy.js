@@ -1,3 +1,6 @@
+// As the user scrolls the website 
+/* https://codepen.io/zchee/pen/ogzvZZ */
+
 (function() {
   'use strict';
 

@@ -1,3 +1,4 @@
+// Navigation bar code for the mobile phone size screen 
 
 function myFunction() {
     var x = document.getElementById("myTopnav");

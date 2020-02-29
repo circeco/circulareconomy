@@ -1,9 +1,10 @@
+/*----------Mapbox code */
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2lyY2VjbyIsImEiOiJjazczN3docmowNjMwM2ZwZGFkand4YTUxIn0.0pNRz0t74QkAc6y5shG0BA';
 
 // Define Constants 
 
 const stockholm = [18.072, 59.325];
-const denver = [-105.0178157, 39.737925];
 const home = denver;
 const myLayers = ['apparel', 'home', 'cycling-sports', 'electronics-books-music']; 
 
@@ -11,6 +12,7 @@ let bounds = [
 [15.072078, 58.247414], // Southwest coordinates
 [19.180375, 60.008548] // Northeast coordinates
 ];
+
 
 // Add the map to the page
 
@@ -39,7 +41,7 @@ map.on('load', function () {        // Load the tilequery
         clusterRadius: 50   // Radius of each cluster when clustering points (defaults to 50)
     });
 
-    map.addSource('home', {      // Add map airport layer 
+    map.addSource('home', {      // Add map layer 
         type: 'vector',
         url: 'mapbox://circeco.ck6utkdky0iro2ls4ea12cku4-9rs0u'
     });
@@ -69,7 +71,7 @@ map.on('load', function () {        // Load the tilequery
     });
 
 
-    map.addSource('apparel', {        // Add map shop layer 
+    map.addSource('apparel', {        // Add map layer 
         type: 'vector',
         url: 'mapbox://circeco.ck6tfz7pg09ir2llh3r0k51sw-7yihy',
     });
@@ -98,7 +100,7 @@ map.on('load', function () {        // Load the tilequery
         },
     });
 
-    map.addSource('electronics-books-music', {        // Add map shop layer 
+    map.addSource('electronics-books-music', {        // Add map layer 
         type: 'vector',
         url: 'mapbox://circeco.ck734j37i04g42kmu1h0oqvkd-7yswd',
     });
@@ -127,7 +129,7 @@ map.on('load', function () {        // Load the tilequery
         },
     });
 
-    map.addSource('cycling-sports', {        // Add map shop layer 
+    map.addSource('cycling-sports', {        // Add map layer 
         type: 'vector',
         url: 'mapbox://circeco.ck7357fhw00cz2lphq8pl19l6-7kbhr',
     });
@@ -160,9 +162,7 @@ map.on('load', function () {        // Load the tilequery
 });
 
 
-// Add list of shops next to the map 
-/* using the idle event when the map is loading to set up features for the listing queryRenderedFeatures 
-return features in one source layer in the vector source */
+// Define pop up box for the map 
 
 let allFeatures = [];
 
@@ -171,9 +171,6 @@ function popUp(e) {
     var coordinates = e.features[0].geometry.coordinates.slice();
     var description = e.features[0].properties.description;
 
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
     }
@@ -186,24 +183,16 @@ function popUp(e) {
             '<p>' + props['STORE_TYPE'] + '</p>' +
             '<a href="http://' + props['WEB'] + '">' + props.WEB + '</a>')
         .addTo(map)
-
-    //const pop = new mapboxgl.Popup();
-    //pop.setLngLat(coordinates);
-    //pop.addTo(map);
-
-    //const link = document.createElement('a')
-    //link.href = "http://" + currentFeature.properties['WEB']
-    //link.text = currentFeature.properties['WEB']
-    //pop.setHTML(link.outerHTML)
 };
 
-
+// On page load 
+/* using the idle event when the map is loading to set up features for the listing queryRenderedFeatures 
+return features in one source layer in the vector source */
 
 map.on('idle', function () {
     allFeatures = map.queryRenderedFeatures({ layers: myLayers });
     console.log("idle features: ", allFeatures);
     buildLocationList(allFeatures);
-
 
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties. Done with the loop. 
@@ -222,20 +211,18 @@ map.on('idle', function () {
 });
 
 
+// Build listing
+
 const listings = document.getElementById('listings');
 
-function buildLocationList(features) {          // Build listing
+function buildLocationList(features) { 
 
     console.log("buildLocationList ", features);
 
-    listings.innerHTML = ''; /* listing only what can be seen in the map */
+    listings.innerHTML = '';   /* listing only what can be seen in the map */
 
     features.forEach(function (feature, i) {
 
-        /**
-         * Create a shortcut for `layer.properties`,
-         * which will be used several times below.
-         **/
         var prop = feature.properties;
 
         /* Add a new listing section to the sidebar. */
@@ -253,15 +240,14 @@ function buildLocationList(features) {          // Build listing
         link.id = "link-" + i;
         link.innerHTML = prop['STORE_NAME'];
 
-
         /* Add details to the individual listing. */
         var details = listing.appendChild(document.createElement('h6'));
         details.innerHTML = prop['ADDRESS_LINE1'];
 
-        /* Add details to the individual listing. */
         var details = listing.appendChild(document.createElement('p'));
         details.innerHTML = prop['DESCRIPTION'];
-
+        
+        /*add event listener for lisitng*/
         listing.addEventListener('click', function () {
             flyToStore(feature);
             createPopUp(feature);
@@ -287,11 +273,8 @@ filterBox.addEventListener('keyup', function (event) {
 });
 
 
+//Fly to store effect 
 
-/**
- * Use Mapbox GL JS's `flyTo` to move the camera smoothly
- * a given center point.
- **/
 function flyToStore(currentFeature) {
     map.flyTo({
         center: currentFeature.geometry.coordinates,
@@ -299,9 +282,7 @@ function flyToStore(currentFeature) {
     });
 }
 
-/**
- * Create a Mapbox GL JS `Popup`.
- **/
+// Create a pop up box for the listing 
 function createPopUp(currentFeature) {
     var popUps = document.getElementsByClassName('mapboxgl-popup');
     if (popUps[0]) popUps[0].remove();
@@ -312,8 +293,6 @@ function createPopUp(currentFeature) {
             '<a href="http://' + currentFeature.properties['WEB'] + '">' + currentFeature.properties.WEB + '</a>')
         .addTo(map);
 }
-
-
 
 
 // Toggleable hide and show layers 
